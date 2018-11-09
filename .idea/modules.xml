@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/casque-authenticator.iml" filepath="$PROJECT_DIR$/casque-authenticator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/component/uk.co.casque.authenticator/uk.co.casque.authenticator.iml" filepath="$PROJECT_DIR$/component/uk.co.casque.authenticator/uk.co.casque.authenticator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/feature/uk.co.casque.authenticator.feature/uk.co.casque.authenticator.feature.iml" filepath="$PROJECT_DIR$/feature/uk.co.casque.authenticator.feature/uk.co.casque.authenticator.feature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/org.wso2.carbon.identity.casque.authenticator.iml" filepath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/org.wso2.carbon.identity.casque.authenticator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/org.wso2.carbon.identity.casque.authenticator.feature.iml" filepath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/org.wso2.carbon.identity.casque.authenticator.feature.iml" />
     </modules>
   </component>
 </project>

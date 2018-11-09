@@ -6,13 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="uk.co.casque.authenticator" />
+        <module name="org.wso2.carbon.identity.casque.authenticator" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="casque-authenticator" target="1.7" />
-      <module name="uk.co.casque.authenticator" target="1.7" />
-      <module name="uk.co.casque.authenticator.feature" target="1.7" />
+      <module name="org.wso2.carbon.identity.casque.authenticator" target="1.7" />
+      <module name="org.wso2.carbon.identity.casque.authenticator.feature" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
