@@ -42,8 +42,7 @@ public class CasqueConfig {
             return;
         }
         if (line.startsWith(CasqueAuthenticatorConstants.CONF_CASQUE_SECRET)) {
-            radiusSecret = line.substring(CasqueAuthenticatorConstants.CONF_CASQUE_SECRET.length())
-		.trim().getBytes();
+            radiusSecret = line.substring(CasqueAuthenticatorConstants.CONF_CASQUE_SECRET.length()).trim().getBytes();
             return;
         }
         if (line.startsWith(CasqueAuthenticatorConstants.CONF_CASQUE_ADDRESS)) {

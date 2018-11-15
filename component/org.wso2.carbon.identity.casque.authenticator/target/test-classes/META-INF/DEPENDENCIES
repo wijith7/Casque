@@ -255,8 +255,6 @@ From: 'MetaStuff Ltd.' (http://sourceforge.net/projects/dom4j)
 
 
 From: 'QOS.ch' (http://www.qos.ch)
-  - JCL 1.1.1 implemented over SLF4J (http://www.slf4j.org) org.slf4j:jcl-over-slf4j:jar:1.5.5
-
   - Log4j Implemented Over SLF4J (http://www.slf4j.org) org.slf4j:log4j-over-slf4j:jar:1.5.5
     License: Apache Software Licenses  (http://www.apache.org/licenses/LICENSE-2.0.txt)
   - SLF4J API Module (http://www.slf4j.org) org.slf4j:slf4j-api:jar:1.5.5

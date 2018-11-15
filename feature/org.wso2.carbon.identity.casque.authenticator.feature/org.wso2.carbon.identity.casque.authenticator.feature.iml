@@ -10,7 +10,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="org.wso2.carbon.identity.casque.authenticator" />
-    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.carbon:org.wso2.carbon.utils:4.4.11" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.orbit.org.bouncycastle:bcprov-jdk15on:1.52.0.wso2v1" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-jdk15on:1.52" level="project" />
@@ -71,7 +70,6 @@
     <orderEntry type="library" name="Maven: org.opensaml:openws:1.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.opensaml:xmltooling:1.2.0" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.5.5" level="project" />
-    <orderEntry type="library" name="Maven: org.slf4j:jcl-over-slf4j:1.5.5" level="project" />
     <orderEntry type="library" name="Maven: org.slf4j:log4j-over-slf4j:1.5.5" level="project" />
     <orderEntry type="library" name="Maven: joda-time:joda-time:1.5.2" level="project" />
     <orderEntry type="library" name="Maven: org.bouncycastle:bcprov-ext-jdk15:1.40" level="project" />
@@ -176,6 +174,7 @@
     <orderEntry type="library" name="Maven: org.apache.ws.commons.axiom:axiom-impl:1.2.11" level="project" />
     <orderEntry type="library" name="Maven: org.codehaus.woodstox:wstx-asl:3.2.9" level="project" />
     <orderEntry type="library" name="Maven: jline:jline:0.9.94" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
     <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.0" level="project" />
     <orderEntry type="library" name="Maven: commons-io:commons-io:2.0" level="project" />
     <orderEntry type="library" name="Maven: org.wso2.orbit.commons-collections:commons-collections:3.2.2.wso2v1" level="project" />

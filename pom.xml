@@ -36,7 +36,7 @@
         <module>feature/org.wso2.carbon.identity.casque.authenticator.feature</module>
     </modules>
 
-
+    <dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -64,7 +64,34 @@
 	    <artifactId>org.wso2.carbon.user.core</artifactId>
 	    <version>${carbon.kernel.version}</version>
         </dependency>
+        <!--Test Dependencies-->
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng-common</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-api-mockito</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.powermock</groupId>
+            <artifactId>powermock-module-testng</artifactId>
+            <version>${powermock.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
+    </dependencyManagement>
 
     <build>
         <pluginManagement>
@@ -185,6 +212,8 @@
     </pluginRepositories>
 
     <properties>
+        <mockito.version>1.10.19</mockito.version>
+        <powermock.version>1.6.5</powermock.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>3.8.1</junit.version>
         <carbon.kernel.version>4.4.11</carbon.kernel.version>

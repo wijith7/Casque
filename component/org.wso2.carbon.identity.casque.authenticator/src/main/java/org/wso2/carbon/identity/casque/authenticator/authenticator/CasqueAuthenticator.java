@@ -68,7 +68,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 	    throw new CasqueException("User: " + userName + ", Token ID bad format: " + tokenId);
 	    
 	} catch (org.wso2.carbon.user.api.UserStoreException e) {
-	    log.info("User Store Exception: " + e.getMessage());
+	    log.error("User Store Exception: " + e.getMessage());
 	}
 	throw new CasqueException("Unable to get token id for user " + userName);
     }
@@ -85,6 +85,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 
 	    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);
 	    // Initial Access Request, fixed user,  token ID + username as the password
+		// Send request as Datagram packet
 	    RadiusResponse radiusResponse = Radius.sendRequest("CASQUE SNR", tokenIdPlusName, null);
 	    int radiusResponseType = radiusResponse.getType();
 
@@ -187,7 +188,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 	    }
 	}
 
-	log.info("Login Cancelled");
+	log.error("Login Cancelled");
 	return AuthenticatorFlowStatus.SUCCESS_COMPLETED;
     }
 
@@ -221,6 +222,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 
         return req.getParameter("sessionDataKey");
     }
+
 
     @Override
     public String getFriendlyName() {
