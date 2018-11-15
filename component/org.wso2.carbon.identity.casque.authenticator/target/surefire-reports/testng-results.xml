@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="262" started-at="2018-11-14T16:19:30Z" finished-at="2018-11-14T16:19:30Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="262" started-at="2018-11-14T16:19:30Z" finished-at="2018-11-14T16:19:30Z">
+      <class name="org.wso2.carbon.identity.casque.authenticator.authenticator.AuthPagesTest">
+        <test-method status="PASS" signature="testChallengePage()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.AuthPagesTest@5622fdf]" name="testChallengePage" duration-ms="0" started-at="2018-11-14T21:49:30Z" finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testChallengePage -->
+      </class> <!-- org.wso2.carbon.identity.casque.authenticator.authenticator.AuthPagesTest -->
+      <class name="org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="setUp" is-config="true" duration-ms="225" started-at="2018-11-14T21:49:30Z" finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetContextIdentifier()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="testGetContextIdentifier" duration-ms="12" started-at="2018-11-14T21:49:30Z" description="Test case for getContextIdentifier() method." finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetContextIdentifier -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="setUp" is-config="true" duration-ms="1" started-at="2018-11-14T21:49:30Z" finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="setUp" is-config="true" duration-ms="1" started-at="2018-11-14T21:49:30Z" finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetFriendlyName()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="testGetFriendlyName" duration-ms="0" started-at="2018-11-14T21:49:30Z" description="Test case for GetFriendlyName() method." finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetFriendlyName -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="setUp" is-config="true" duration-ms="1" started-at="2018-11-14T21:49:30Z" finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testGetName()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="testGetName" duration-ms="0" started-at="2018-11-14T21:49:30Z" description="Test case for GetName() method." finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetName -->
+        <test-method status="PASS" signature="testRetryAuthenticationEnabled()[pri:0, instance:org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest@6093dd95]" name="testRetryAuthenticationEnabled" duration-ms="0" started-at="2018-11-14T21:49:30Z" description="Test case for RetryAuthenticationEnabled() method." finished-at="2018-11-14T21:49:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRetryAuthenticationEnabled -->
+      </class> <!-- org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
