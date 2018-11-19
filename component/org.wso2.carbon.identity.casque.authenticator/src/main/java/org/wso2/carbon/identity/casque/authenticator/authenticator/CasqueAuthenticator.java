@@ -50,67 +50,67 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
     private static final String TOKEN_ID_FORMAT = "^[a-fA-F0-9]{3} [0-9]{6}$";  // e.g. "FFF 000001"
     private static final AuthPages authPages = new AuthPages();
 
-    private String getCasqueTokenId(String userName) throws CasqueException{
+    private String getCasqueTokenId(String userName) throws CasqueException {
 
-	try {
-	    UserStoreManager userStoreManager = CasqueAuthenticatorServiceDataHolder.getInstance()
-		.getRealmService().getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(userName))
-		.getUserStoreManager();
+        try {
+            UserStoreManager userStoreManager = CasqueAuthenticatorServiceDataHolder.getInstance()
+                    .getRealmService().getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(userName))
+                    .getUserStoreManager();
 
-	    // Get the Token ID assigned to userName
-	    String tokenId = userStoreManager.getUserClaimValue(userName, CASQUE_SNR_CLAIM, null);
-	    if(tokenId == null) {
-		throw new CasqueException("User: " + userName + ", Token ID is null");
-	    }
-	    if(tokenId.matches(TOKEN_ID_FORMAT)) {
-		return tokenId;
-	    }
-	    throw new CasqueException("User: " + userName + ", Token ID bad format: " + tokenId);
-	    
-	} catch (org.wso2.carbon.user.api.UserStoreException e) {
-	    log.error("User Store Exception: " + e.getMessage());
-	}
-	throw new CasqueException("Unable to get token id for user " + userName);
+            // Get the Token ID assigned to userName
+            String tokenId = userStoreManager.getUserClaimValue(userName, CASQUE_SNR_CLAIM, null);
+            if (tokenId == null) {
+                throw new CasqueException("User: " + userName + ", Token ID is null");
+            }
+            if (tokenId.matches(TOKEN_ID_FORMAT)) {
+                return tokenId;
+            }
+            throw new CasqueException("User: " + userName + ", Token ID bad format: " + tokenId);
+
+        } catch (org.wso2.carbon.user.api.UserStoreException e) {
+            log.error("User Store Exception: " + e.getMessage());
+        }
+        throw new CasqueException("Unable to get token id for user " + userName);
     }
 
     private AuthenticatorFlowStatus start(HttpServletRequest request, HttpServletResponse response,
-					  AuthenticationContext context) throws AuthenticationFailedException {
+                                          AuthenticationContext context) throws AuthenticationFailedException {
 
-	try {
-	    String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);
-	    context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);
+        try {
+            String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);
+            context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);
 
-	    String tokenId = getCasqueTokenId(userName);
-	    String tokenIdPlusName = tokenId + userName;
+            String tokenId = getCasqueTokenId(userName);
+            String tokenIdPlusName = tokenId + userName;
 
-	    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);
-	    // Initial Access Request, fixed user,  token ID + username as the password
-		// Send request as Datagram packet
-	    RadiusResponse radiusResponse = Radius.sendRequest("CASQUE SNR", tokenIdPlusName, null);
-	    int radiusResponseType = radiusResponse.getType();
+            context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);
+            // Initial Access Request, fixed user,  token ID + username as the password
+            // Send request as Datagram packet
+            RadiusResponse radiusResponse = Radius.sendRequest("CASQUE SNR", tokenIdPlusName, null);
+            int radiusResponseType = radiusResponse.getType();
 
-	    if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Got a challenge
-		context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());
-		String challenge = radiusResponse.getChallenge();
-		String contextIdentifier = context.getContextIdentifier();
-		authPages.challengePage(response, contextIdentifier, challenge);
-		return AuthenticatorFlowStatus.INCOMPLETE;
-	    }
+            if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Got a challenge
+                context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());
+                String challenge = radiusResponse.getChallenge();
+                String contextIdentifier = context.getContextIdentifier();
+                authPages.challengePage(response, contextIdentifier, challenge);
+                return AuthenticatorFlowStatus.INCOMPLETE;
+            }
 
-	    clearProperties(context);
+            clearProperties(context);
 
-	    if (radiusResponseType == RadiusResponse.ACCESS_REJECT) {
-		throw new InvalidCredentialsException(
-		    "User authentication failed due to invalid credentials",
-		    User.getUserFromUserName(userName));
-	    }
+            if (radiusResponseType == RadiusResponse.ACCESS_REJECT) {
+                throw new InvalidCredentialsException(
+                        "User authentication failed due to invalid credentials",
+                        User.getUserFromUserName(userName));
+            }
 
-	    throw new InvalidCredentialsException("User authentication failed due to " +
-						  radiusResponse.getError(),
-						  User.getUserFromUserName(userName));
-	} catch(CasqueException ce) {
-	    throw new AuthenticationFailedException(ce.getMessage(), ce);
-	}
+            throw new InvalidCredentialsException("User authentication failed due to " +
+                    radiusResponse.getError(),
+                    User.getUserFromUserName(userName));
+        } catch (CasqueException ce) {
+            throw new AuthenticationFailedException(ce.getMessage(), ce);
+        }
     }
 
     private void clearProperties(AuthenticationContext context) {
@@ -137,64 +137,64 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 
         byte[] radiusState = (byte[]) context.getProperty(CasqueAuthenticatorConstants.RADIUS_STATE);
 
-	if (radiusState == null) { // Initial request, get a challenge
-	    AuthenticatorFlowStatus status = start(request, response, context);
-	    context.setCurrentAuthenticator(getName());
-	    return status;
-	}
-	// radiusState is not null so handle the response to the challenge
-	context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);
+        if (radiusState == null) { // Initial request, get a challenge
+            AuthenticatorFlowStatus status = start(request, response, context);
+            context.setCurrentAuthenticator(getName());
+            return status;
+        }
+        // radiusState is not null so handle the response to the challenge
+        context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);
 
-	String action = request.getParameter(CasqueAuthenticatorConstants.BTN_ACTION);
-	if (action != null && "Login".equals(action)) { // action can be null, Login or Cancel
+        String action = request.getParameter(CasqueAuthenticatorConstants.BTN_ACTION);
+        if (action != null && "Login".equals(action)) { // action can be null, Login or Cancel
 
-	    String userName = (String) context.getProperty(CasqueAuthenticatorConstants.USER_NAME);
-	    String challengeResponse = request.getParameter(CasqueAuthenticatorConstants.RESPONSE);
-	    try {
-		// Send the response to the CASQUE Server
-		RadiusResponse radiusResponse = Radius.sendRequest(userName, challengeResponse, radiusState);
-		int radiusResponseType = radiusResponse.getType();
+            String userName = (String) context.getProperty(CasqueAuthenticatorConstants.USER_NAME);
+            String challengeResponse = request.getParameter(CasqueAuthenticatorConstants.RESPONSE);
+            try {
+                // Send the response to the CASQUE Server
+                RadiusResponse radiusResponse = Radius.sendRequest(userName, challengeResponse, radiusState);
+                int radiusResponseType = radiusResponse.getType();
 
-		if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Another challenge.
-		    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());
-		    String challenge = radiusResponse.getChallenge();
-		    String contextIdentifier = context.getContextIdentifier();
-		    authPages.challengePage(response, contextIdentifier, challenge);
-		    return AuthenticatorFlowStatus.INCOMPLETE;
-		}
+                if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Another challenge.
+                    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());
+                    String challenge = radiusResponse.getChallenge();
+                    String contextIdentifier = context.getContextIdentifier();
+                    authPages.challengePage(response, contextIdentifier, challenge);
+                    return AuthenticatorFlowStatus.INCOMPLETE;
+                }
 
-		clearProperties(context);
+                clearProperties(context);
 
-		if (radiusResponseType == RadiusResponse.ACCESS_ACCEPT) { // Authentication Pass.
-		    context.setSubject(AuthenticatedUser.
-			createLocalAuthenticatedUserFromSubjectIdentifier(userName));
-		    String tokenId = getCasqueTokenId(userName);
-		    log.info("CASQUE Authentication PASS for " + userName + " with Token " + tokenId);
-		    request.setAttribute(FrameworkConstants.REQ_ATTR_HANDLED, true);
-		    return AuthenticatorFlowStatus.SUCCESS_COMPLETED;
-		}
+                if (radiusResponseType == RadiusResponse.ACCESS_ACCEPT) { // Authentication Pass.
+                    context.setSubject(AuthenticatedUser.createLocalAuthenticatedUserFromSubjectIdentifier(userName));
+                    String tokenId = getCasqueTokenId(userName);
+                    log.info("CASQUE Authentication PASS for " + userName + " with Token " + tokenId);
+                    request.setAttribute(FrameworkConstants.REQ_ATTR_HANDLED, true);
+                    return AuthenticatorFlowStatus.SUCCESS_COMPLETED;
+                }
 
-		if (radiusResponseType == RadiusResponse.ACCESS_REJECT) { // Authentication Failed.
-		    throw new InvalidCredentialsException("User authentication failed due to invalid credentials",
-							  User.getUserFromUserName(userName));
-		}
+                if (radiusResponseType == RadiusResponse.ACCESS_REJECT) { // Authentication Failed.
+                    throw new InvalidCredentialsException("User authentication failed due to invalid credentials",
+                            User.getUserFromUserName(userName));
+                }
 
-		throw new InvalidCredentialsException("User authentication failed due to " +
-						      radiusResponse.getError(),
-						      User.getUserFromUserName(userName));
+                throw new InvalidCredentialsException("User authentication failed due to " +
+                        radiusResponse.getError(),
+                        User.getUserFromUserName(userName));
 
-	    } catch(CasqueException ce) {
-		throw new AuthenticationFailedException(ce.getMessage(), ce);
-	    }
-	}
+            } catch (CasqueException ce) {
+                throw new AuthenticationFailedException(ce.getMessage(), ce);
+            }
+        }
 
-	log.error("Login Cancelled");
-	return AuthenticatorFlowStatus.SUCCESS_COMPLETED;
+        log.error("Login Cancelled");
+        return AuthenticatorFlowStatus.SUCCESS_COMPLETED;
     }
 
     @Override
     protected void initiateAuthenticationRequest(HttpServletRequest request, HttpServletResponse response,
                                                  AuthenticationContext context) throws AuthenticationFailedException {
+
     }
 
     @Override
@@ -222,7 +222,6 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 
         return req.getParameter("sessionDataKey");
     }
-
 
     @Override
     public String getFriendlyName() {
