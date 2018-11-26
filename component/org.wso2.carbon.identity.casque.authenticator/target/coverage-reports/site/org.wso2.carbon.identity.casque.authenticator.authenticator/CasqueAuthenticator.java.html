@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CasqueAuthenticator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Casque Authenticator Component</a> &gt; <a href="index.source.html" class="el_package">org.wso2.carbon.identity.casque.authenticator.authenticator</a> &gt; <span class="el_source">CasqueAuthenticator.java</span></div><h1>CasqueAuthenticator.java</h1><pre class="source lang-java linenums">/*
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+ *
+ * WSO2 Inc. licenses this file to you under the Apache License,
+ * Version 2.0 (the &quot;License&quot;); you may not use this file except
+ * in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package org.wso2.carbon.identity.casque.authenticator.authenticator;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.wso2.carbon.identity.application.authentication.framework.AbstractApplicationAuthenticator;
+import org.wso2.carbon.identity.application.authentication.framework.AuthenticatorFlowStatus;
+import org.wso2.carbon.identity.application.authentication.framework.LocalApplicationAuthenticator;
+import org.wso2.carbon.identity.application.authentication.framework.context.AuthenticationContext;
+import org.wso2.carbon.identity.application.authentication.framework.exception.AuthenticationFailedException;
+import org.wso2.carbon.identity.application.authentication.framework.exception.InvalidCredentialsException;
+import org.wso2.carbon.identity.application.authentication.framework.exception.LogoutFailedException;
+import org.wso2.carbon.identity.application.authentication.framework.model.AuthenticatedUser;
+import org.wso2.carbon.identity.application.authentication.framework.util.FrameworkConstants;
+import org.wso2.carbon.user.api.UserStoreManager;
+import org.wso2.carbon.identity.core.util.IdentityTenantUtil;
+import org.wso2.carbon.identity.application.common.model.User;
+import org.wso2.carbon.identity.casque.authenticator.constants.CasqueAuthenticatorConstants;
+import org.wso2.carbon.identity.casque.authenticator.authenticator.internal.CasqueAuthenticatorServiceDataHolder;
+import org.wso2.carbon.identity.casque.authenticator.exception.CasqueException;
+import org.wso2.carbon.identity.casque.authenticator.authenticator.radius.Radius;
+import org.wso2.carbon.identity.casque.authenticator.authenticator.radius.RadiusResponse;
+
+import java.util.HashMap;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+<span class="fc" id="L45">public class CasqueAuthenticator extends AbstractApplicationAuthenticator implements LocalApplicationAuthenticator {</span>
+
+    private static final long serialVersionUID = 4341535155455223654L;
+<span class="fc" id="L48">    private static final Log log = LogFactory.getLog(CasqueAuthenticator.class);</span>
+    private static final String CASQUE_SNR_CLAIM = &quot;http://wso2.org/claims/identity/casqueSnrToken&quot;;
+    private static final String TOKEN_ID_FORMAT = &quot;^[a-fA-F0-9]{3} [0-9]{6}$&quot;;  // e.g. &quot;FFF 000001&quot;
+<span class="fc" id="L51">    private static final AuthPages authPages = new AuthPages();</span>
+
+    private String getCasqueTokenId(String userName) throws CasqueException {
+
+        try {
+<span class="fc" id="L56">            UserStoreManager userStoreManager = CasqueAuthenticatorServiceDataHolder.getInstance()</span>
+<span class="fc" id="L57">                    .getRealmService().getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(userName))</span>
+<span class="fc" id="L58">                    .getUserStoreManager();</span>
+
+            // Get the Token ID assigned to userName
+<span class="fc" id="L61">            String tokenId = userStoreManager.getUserClaimValue(userName, CASQUE_SNR_CLAIM, null);</span>
+<span class="fc bfc" id="L62" title="All 2 branches covered.">            if (tokenId == null) {</span>
+<span class="fc" id="L63">                throw new CasqueException(&quot;User: &quot; + userName + &quot;, Token ID is null&quot;);</span>
+            }
+<span class="fc bfc" id="L65" title="All 2 branches covered.">            if (tokenId.matches(TOKEN_ID_FORMAT)) {</span>
+<span class="fc" id="L66">                return tokenId;</span>
+            }
+<span class="fc" id="L68">            throw new CasqueException(&quot;User: &quot; + userName + &quot;, Token ID bad format: &quot; + tokenId);</span>
+
+<span class="nc" id="L70">        } catch (org.wso2.carbon.user.api.UserStoreException e) {</span>
+<span class="nc" id="L71">            log.error(&quot;User Store Exception: &quot; + e.getMessage());</span>
+        }
+<span class="nc" id="L73">        throw new CasqueException(&quot;Unable to get token id for user &quot; + userName);</span>
+    }
+
+    private AuthenticatorFlowStatus start(HttpServletRequest request, HttpServletResponse response,
+                                          AuthenticationContext context) throws AuthenticationFailedException {
+
+        try {
+<span class="fc" id="L80">            String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);</span>
+<span class="fc" id="L81">            context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);</span>
+
+<span class="fc" id="L83">            String tokenId = getCasqueTokenId(userName);</span>
+<span class="fc" id="L84">            String tokenIdPlusName = tokenId + userName;</span>
+
+<span class="fc" id="L86">            context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);</span>
+            // Initial Access Request, fixed user,  token ID + username as the password
+            // Send request as Datagram packet
+<span class="fc" id="L89">            RadiusResponse radiusResponse = Radius.sendRequest(&quot;CASQUE SNR&quot;, tokenIdPlusName, null);</span>
+<span class="fc" id="L90">            int radiusResponseType = radiusResponse.getType();</span>
+
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">            if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Got a challenge</span>
+<span class="fc" id="L93">                context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());</span>
+<span class="fc" id="L94">                String challenge = radiusResponse.getChallenge();</span>
+<span class="fc" id="L95">                String contextIdentifier = context.getContextIdentifier();</span>
+<span class="fc" id="L96">                authPages.challengePage(response, contextIdentifier, challenge);</span>
+<span class="fc" id="L97">                return AuthenticatorFlowStatus.INCOMPLETE;</span>
+            }
+
+<span class="nc" id="L100">            clearProperties(context);</span>
+
+<span class="nc bnc" id="L102" title="All 2 branches missed.">            if (radiusResponseType == RadiusResponse.ACCESS_REJECT) {</span>
+<span class="nc" id="L103">                throw new InvalidCredentialsException(</span>
+                        &quot;User authentication failed due to invalid credentials&quot;,
+<span class="nc" id="L105">                        User.getUserFromUserName(userName));</span>
+            }
+
+<span class="nc" id="L108">            throw new InvalidCredentialsException(&quot;User authentication failed due to &quot; +</span>
+<span class="nc" id="L109">                    radiusResponse.getError(),</span>
+<span class="nc" id="L110">                    User.getUserFromUserName(userName));</span>
+<span class="nc" id="L111">        } catch (CasqueException ce) {</span>
+<span class="nc" id="L112">            throw new AuthenticationFailedException(ce.getMessage(), ce);</span>
+        }
+    }
+
+    private void clearProperties(AuthenticationContext context) {
+
+<span class="fc" id="L118">        Map&lt;String, Object&gt; props = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L119">        context.setProperties(props);</span>
+<span class="fc" id="L120">    }</span>
+
+    @Override
+    public AuthenticatorFlowStatus process(HttpServletRequest request,
+                                           HttpServletResponse response, AuthenticationContext context)
+            throws AuthenticationFailedException, LogoutFailedException {
+
+<span class="fc bfc" id="L127" title="All 2 branches covered.">        if (context.isLogoutRequest()) {</span>
+            try {
+<span class="nc" id="L129">                processLogoutResponse(request, response, context);</span>
+<span class="fc" id="L130">            } catch (UnsupportedOperationException e) {</span>
+<span class="pc bpc" id="L131" title="1 of 2 branches missed.">                if (log.isDebugEnabled()) {</span>
+<span class="fc" id="L132">                    log.debug(&quot;Ignoring UnsupportedOperationException.&quot;, e);</span>
+                }
+<span class="nc" id="L134">            }</span>
+<span class="fc" id="L135">            return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
+        }
+
+<span class="fc" id="L138">        byte[] radiusState = (byte[]) context.getProperty(CasqueAuthenticatorConstants.RADIUS_STATE);</span>
+
+<span class="fc bfc" id="L140" title="All 2 branches covered.">        if (radiusState == null) { // Initial request, get a challenge</span>
+<span class="fc" id="L141">            AuthenticatorFlowStatus status = start(request, response, context);</span>
+<span class="fc" id="L142">            context.setCurrentAuthenticator(getName());</span>
+<span class="fc" id="L143">            return status;</span>
+        }
+        // radiusState is not null so handle the response to the challenge
+<span class="fc" id="L146">        context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);</span>
+
+<span class="fc" id="L148">        String action = request.getParameter(CasqueAuthenticatorConstants.BTN_ACTION);</span>
+<span class="pc bpc" id="L149" title="1 of 4 branches missed.">        if (action != null &amp;&amp; &quot;Login&quot;.equals(action)) { // action can be null, Login or Cancel</span>
+
+<span class="fc" id="L151">            String userName = (String) context.getProperty(CasqueAuthenticatorConstants.USER_NAME);</span>
+<span class="fc" id="L152">            String challengeResponse = request.getParameter(CasqueAuthenticatorConstants.RESPONSE);</span>
+            try {
+                // Send the response to the CASQUE Server
+<span class="fc" id="L155">                RadiusResponse radiusResponse = Radius.sendRequest(userName, challengeResponse, radiusState);</span>
+<span class="fc" id="L156">                int radiusResponseType = radiusResponse.getType();</span>
+
+<span class="fc bfc" id="L158" title="All 2 branches covered.">                if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Another challenge.</span>
+<span class="fc" id="L159">                    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());</span>
+<span class="fc" id="L160">                    String challenge = radiusResponse.getChallenge();</span>
+<span class="fc" id="L161">                    String contextIdentifier = context.getContextIdentifier();</span>
+<span class="fc" id="L162">                    authPages.challengePage(response, contextIdentifier, challenge);</span>
+<span class="fc" id="L163">                    return AuthenticatorFlowStatus.INCOMPLETE;</span>
+                }
+
+<span class="fc" id="L166">                clearProperties(context);</span>
+
+<span class="pc bpc" id="L168" title="1 of 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_ACCEPT) { // Authentication Pass.</span>
+<span class="fc" id="L169">                    context.setSubject(AuthenticatedUser.createLocalAuthenticatedUserFromSubjectIdentifier(userName));</span>
+<span class="fc" id="L170">                    String tokenId = getCasqueTokenId(userName);</span>
+<span class="fc" id="L171">                    log.info(&quot;CASQUE Authentication PASS for &quot; + userName + &quot; with Token &quot; + tokenId);</span>
+<span class="fc" id="L172">                    request.setAttribute(FrameworkConstants.REQ_ATTR_HANDLED, true);</span>
+<span class="fc" id="L173">                    return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
+                }
+
+<span class="nc bnc" id="L176" title="All 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_REJECT) { // Authentication Failed.</span>
+<span class="nc" id="L177">                    throw new InvalidCredentialsException(&quot;User authentication failed due to invalid credentials&quot;,</span>
+<span class="nc" id="L178">                            User.getUserFromUserName(userName));</span>
+                }
+
+<span class="nc" id="L181">                throw new InvalidCredentialsException(&quot;User authentication failed due to &quot; +</span>
+<span class="nc" id="L182">                        radiusResponse.getError(),</span>
+<span class="nc" id="L183">                        User.getUserFromUserName(userName));</span>
+
+<span class="nc" id="L185">            } catch (CasqueException ce) {</span>
+<span class="nc" id="L186">                throw new AuthenticationFailedException(ce.getMessage(), ce);</span>
+            }
+        }
+
+<span class="fc" id="L190">        log.error(&quot;Login Cancelled&quot;);</span>
+<span class="fc" id="L191">        return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
+    }
+
+    @Override
+    protected void initiateAuthenticationRequest(HttpServletRequest request, HttpServletResponse response,
+                                                 AuthenticationContext context) throws AuthenticationFailedException {
+
+<span class="nc" id="L198">    }</span>
+
+    @Override
+    protected void processAuthenticationResponse(HttpServletRequest request,
+                                                 HttpServletResponse response,
+                                                 AuthenticationContext context)
+            throws AuthenticationFailedException {
+
+<span class="nc" id="L206">    }</span>
+
+    @Override
+    public boolean canHandle(HttpServletRequest req) {
+
+<span class="fc" id="L211">        return true;</span>
+    }
+
+    @Override
+    protected boolean retryAuthenticationEnabled() {
+
+<span class="fc" id="L217">        return false;</span>
+    }
+
+    @Override
+    public String getContextIdentifier(HttpServletRequest req) {
+
+<span class="fc" id="L223">        return req.getParameter(&quot;sessionDataKey&quot;);</span>
+    }
+
+    @Override
+    public String getFriendlyName() {
+
+<span class="fc" id="L229">        return CasqueAuthenticatorConstants.AUTHENTICATOR_FRIENDLY_NAME;</span>
+    }
+
+    @Override
+    public String getName() {
+
+<span class="fc" id="L235">        return CasqueAuthenticatorConstants.AUTHENTICATOR_NAME;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
