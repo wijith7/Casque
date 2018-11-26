@@ -16,16 +16,18 @@ CASQUE SNR Tokens can be completely refreshed (unlike existing OTP Tokens) allow
 
 This topic provides instructions on how to configure the CASQUE SNR Multi-factor Authenticator with the WSO2 Identity Server.
 
-To download the CASQUE-SNR artifacts, go to CASQUE-SNR on [WSO2 Store](https://store.wso2.com/)
-
 Download WSO2 Identity Server from the [WSO2 Identity Server](https://wso2.com/identity-and-access-management) and install it by following the instructions in the [Installing the Product](https://docs.wso2.com/display/IS540/Installation+Guide) topic.
 
 CASQUE SNR Version 1.1.0 Multi-factor Authenticator is supported by WSO2 Identity Server from version 5.4.0.
 
 # Deploying Artifacts
 
-Artifacts contains P2-repo. P2-repo can generate by casque_authenticator, you can find repo in casque_authenticator/feature/org.wso2.carbon.identity.casque.authenticator.feature/target 
-Download artifacts from the store
+To download the CASQUE-SNR artifacts, go to CASQUE-SNR on [WSO2 Store](https://store.wso2.com/)
+
+
+
+(Artifacts contains P2-repo. P2-repo can generate by casque_authenticator, you can find repo in casque_authenticator/feature/org.wso2.carbon.identity.casque.authenticator.feature/target) 
+
 
 ## Follow the steps given below to install the feature
 
@@ -72,9 +74,12 @@ This topic provides Instructions to set up a mapped claim for the CASQUE SNR Aut
 
 3. Insert the followings
 
-    Claim URI		http://wso2.org/claims/identity/casqueSnrToken
-    Description		CASQUE SNR Token ID
-    Mapped Attribute(s)	PRIMARY   displayName
+
+    Claim URI	 -	http://wso2.org/claims/identity/casqueSnrToken
+
+    Description	-	CASQUE SNR Token ID
+
+    Mapped Attribute(s)	- PRIMARY   displayName 
 
     If displayName is in use then map to another attribute.
 

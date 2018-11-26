@@ -18,7 +18,6 @@
 package org.wso2.carbon.identity.casque.authenticator.authenticator;
 
 import org.mockito.Mock;
-import org.mockito.Spy;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.reflect.Whitebox;
 import org.testng.Assert;
@@ -28,7 +27,6 @@ import org.testng.annotations.ObjectFactory;
 import org.testng.annotations.Test;
 import org.wso2.carbon.identity.application.authentication.framework.AuthenticatorFlowStatus;
 import org.wso2.carbon.identity.application.authentication.framework.context.AuthenticationContext;
-import org.wso2.carbon.identity.application.authentication.framework.exception.InvalidCredentialsException;
 import org.wso2.carbon.identity.application.authentication.framework.model.AuthenticatedUser;
 import org.wso2.carbon.identity.application.common.model.User;
 import org.wso2.carbon.identity.casque.authenticator.authenticator.internal.CasqueAuthenticatorServiceDataHolder;
@@ -44,7 +42,6 @@ import org.wso2.carbon.user.core.service.RealmService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyObject;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.Matchers.eq;
@@ -52,15 +49,12 @@ import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.powermock.api.mockito.PowerMockito.mockStatic;
 
-
-//import org.mockito.Mock;
-
-//@RunWith(PowerMockRunner.class)
-@PrepareForTest({CasqueAuthenticatorServiceDataHolder.class,IdentityTenantUtil.class,RadiusResponse.class,Radius.class,AuthenticatedUser.class,User.class})
+@PrepareForTest({CasqueAuthenticatorServiceDataHolder.class, IdentityTenantUtil.class, RadiusResponse.class, Radius.class, AuthenticatedUser.class, User.class})
 public class CasqueAuthenticatorTest {
 
     @ObjectFactory
     public IObjectFactory getObjectFactory() {
+
         return new org.powermock.modules.testng.PowerMockObjectFactory();
     }
 
@@ -85,19 +79,7 @@ public class CasqueAuthenticatorTest {
     UserRealm tenantUserRealm;
 
     @Mock
-    IdentityTenantUtil identityTenantUtil;
-
-    @Mock
     private AuthenticationContext context;
-
-    @Spy
-    private AuthenticationContext mockedContext;
-
-    @Mock
-    private CasqueAuthenticatorConstants casqueAuthenticatorConstants;
-
-    @Mock
-    private Radius radius;
 
     @Mock
     private RadiusResponse radiusResponse;
@@ -107,7 +89,6 @@ public class CasqueAuthenticatorTest {
 
     @Mock
     private User user;
-
 
     @BeforeMethod
     public void setUp() {
@@ -167,7 +148,6 @@ public class CasqueAuthenticatorTest {
 
     }
 
-
     @Test(expectedExceptions = {CasqueException.class})
     public void testGetCasqueTokenIdforTokenNull() throws Exception {
 
@@ -182,6 +162,7 @@ public class CasqueAuthenticatorTest {
         Whitebox.invokeMethod(casqueAuthenticator, "getCasqueTokenId", "");
 
     }
+
     @Test(expectedExceptions = {CasqueException.class})
     public void testGetCasqueTokenIdforToknIdBadFormat() throws Exception {
 
@@ -196,21 +177,18 @@ public class CasqueAuthenticatorTest {
 
     }
 
-//    @Test(expectedExceptions = {CasqueException.class})
-//    public void testGetCasqueTokenIdforToknIdForUnableToGetTokenId() throws Exception {
-//        //String token = "FFF 000001";
-//        mockStatic(CasqueAuthenticatorServiceDataHolder.class);
-//        mockStatic(IdentityTenantUtil.class);
-//        when(CasqueAuthenticatorServiceDataHolder.getInstance()).thenReturn(casqueAuthenticatorServiceDataHolder);
-//        when(casqueAuthenticatorServiceDataHolder.getRealmService()).thenReturn(realmService);
-//        when(realmService.getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(anyString()))).thenReturn(tenantUserRealm);
-//        when(tenantUserRealm.getUserStoreManager()).thenReturn(userStoreManager);
-//       // when(userStoreManager.getUserClaimValue(anyString(), anyString(), anyString())).thenReturn("");
-////        Whitebox.setInternalState(CasqueAuthenticatorServiceDataHolder.class, "instance", casqueAuthenticatorServiceDataHolder);
-//        Whitebox.invokeMethod(casqueAuthenticator, "getCasqueTokenId", "");
-//
-//    }
+    @Test(expectedExceptions = {CasqueException.class})
+    public void testGetCasqueTokenIdforToknIdForUnableToGetTokenId() throws Exception {
 
+        mockStatic(CasqueAuthenticatorServiceDataHolder.class);
+        mockStatic(IdentityTenantUtil.class);
+        when(CasqueAuthenticatorServiceDataHolder.getInstance()).thenReturn(casqueAuthenticatorServiceDataHolder);
+        when(casqueAuthenticatorServiceDataHolder.getRealmService()).thenReturn(realmService);
+        when(realmService.getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(anyString()))).thenReturn(tenantUserRealm);
+        when(tenantUserRealm.getUserStoreManager()).thenReturn(userStoreManager);
+        Whitebox.invokeMethod(casqueAuthenticator, "getCasqueTokenId", "");
+
+    }
 
     @Test(description = "Test case for successful logout request.")
     public void testProcessLogoutRequest() throws Exception {
@@ -225,7 +203,7 @@ public class CasqueAuthenticatorTest {
 
         byte[] radiusState = new byte[1];
         radiusState[0] = 10;
-        int radiusResponseType =11;
+        int radiusResponseType = 11;
 
         mockStatic(Radius.class);
 
@@ -248,7 +226,7 @@ public class CasqueAuthenticatorTest {
         mockStatic(IdentityTenantUtil.class);
         mockStatic(Radius.class);
 
-        int radiusResponseType =11;
+        int radiusResponseType = 11;
 
         when(context.isLogoutRequest()).thenReturn(false);
         when(context.getProperty(anyString())).thenReturn(null);
@@ -266,57 +244,18 @@ public class CasqueAuthenticatorTest {
         Assert.assertEquals(status, AuthenticatorFlowStatus.INCOMPLETE);
     }
 
-//    @Test(expectedExceptions = {InvalidCredentialsException.class})
-//    public void testProcessRadiusState6() throws Exception {
-//
-//        mockStatic(CasqueAuthenticatorServiceDataHolder.class);
-//        mockStatic(IdentityTenantUtil.class);
-//        mockStatic(Radius.class);
-//        mockStatic(User.class);
-//
-//        int radiusResponseType =3;
-//
-//        when(user.getUserName()).thenReturn("user1");
-//
-//        when(context.isLogoutRequest()).thenReturn(false);
-//        when(context.getProperty(anyString())).thenReturn(null);
-//        when(CasqueAuthenticatorServiceDataHolder.getInstance()).thenReturn(casqueAuthenticatorServiceDataHolder);
-//        when(casqueAuthenticatorServiceDataHolder.getRealmService()).thenReturn(realmService);
-//        when(realmService.getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(anyString()))).thenReturn(tenantUserRealm);
-//        when(tenantUserRealm.getUserStoreManager()).thenReturn(userStoreManager);
-//        when(userStoreManager.getUserClaimValue(anyString(), anyString(), anyString())).thenReturn("FFF 000001");
-//        when(httpServletRequest.getParameter(anyString())).thenReturn("casque1");
-//
-////        when(context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("casque1");
-////        when(httpServletRequest.getParameter(CasqueAuthenticatorConstants.RESPONSE)).thenReturn("ACCESS_CHALLENGE ");
-//         when(Radius.sendRequest(anyString(), anyString(), (byte[]) anyObject())).thenReturn(radiusResponse);
-//         when(radiusResponse.getType()).thenReturn(radiusResponseType);
-////
-////        when(user.(anyString()));
-////
-//            AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
-////
-////        when(userStoreManager.getUserClaimValue(anyString(), anyString(), anyString())).thenReturn("wso2");
-////        Whitebox.invokeMethod(casqueAuthenticator, "getCasqueTokenId", "");
-//
-//        //Assert.assertEquals(status, AuthenticatorFlowStatus.INCOMPLETE);
-//    }
-
-
-
 
     @Test(description = "Test case for process() method for Authentication Pass.")
     public void testProcessRadiusState2() throws Exception {
 
         byte[] radiusState = new byte[1];
         radiusState[0] = 10;
-        int radiusResponseType =2;
+        int radiusResponseType = 2;
 
         mockStatic(Radius.class);
         mockStatic(AuthenticatedUser.class);
         mockStatic(CasqueAuthenticatorServiceDataHolder.class);
         mockStatic(IdentityTenantUtil.class);
-
 
         when(context.isLogoutRequest()).thenReturn(false);
         when(context.getProperty(anyString())).thenReturn(radiusState);
@@ -331,21 +270,16 @@ public class CasqueAuthenticatorTest {
         when(realmService.getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(anyString()))).thenReturn(tenantUserRealm);
         when(tenantUserRealm.getUserStoreManager()).thenReturn(userStoreManager);
         when(userStoreManager.getUserClaimValue(anyString(), anyString(), anyString())).thenReturn("FFF 000001");
-
-//        when(context.setSubject(any(AuthenticatedUser.class)));
-
-        // when((String)context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("wso2");
         AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
         Assert.assertEquals(status, AuthenticatorFlowStatus.SUCCESS_COMPLETED);
     }
 
-    @Test(description = "Test case for process() method for  Authentication Failed.----------------")
+    @Test(description = "Test case for process() method for  Authentication Failed.")
     public void testProcessRadiusState3() throws Exception {
 
         byte[] radiusState = new byte[1];
         radiusState[0] = 10;
-        int radiusResponseType =3;
-        String userName ="casque1";
+        int radiusResponseType = 3;
         mockStatic(Radius.class);
         mockStatic(User.class);
 
@@ -356,77 +290,25 @@ public class CasqueAuthenticatorTest {
         when(httpServletRequest.getParameter(CasqueAuthenticatorConstants.RESPONSE)).thenReturn("ACCESS_REJECT");
         when(Radius.sendRequest(anyString(), anyString(), (byte[]) anyObject())).thenReturn(radiusResponse);
         when(radiusResponse.getType()).thenReturn(radiusResponseType);
-        when((String)context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("casque1");
+        when((String) context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("casque1");
         when(User.getUserFromUserName(anyString())).thenReturn(user);
-       // AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
-        Assert.assertEquals(User.getUserFromUserName(anyString()),user);
-        //when(User.getUserFromUserName(anyString()));
+        Assert.assertEquals(User.getUserFromUserName(anyString()), user);
 
-       }
-@Test(description = "Test case for process() method for login fail")
-public void testProcessRadiusStateLoginFail() throws Exception {
+    }
 
-    byte[] radiusState = new byte[1];
-    radiusState[0] = 10;
-    int radiusResponseType =11;
-    //String userName ="casque1";
-    mockStatic(Radius.class);
+    @Test(description = "Test case for process() method for login fail")
+    public void testProcessRadiusStateLoginFail() throws Exception {
 
-    when(context.isLogoutRequest()).thenReturn(false);
-    when(context.getProperty(anyString())).thenReturn(radiusState);
-    when(httpServletRequest.getParameter(anyString())).thenReturn(null);
-    AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
-    Assert.assertEquals(status, AuthenticatorFlowStatus.SUCCESS_COMPLETED);
-}
+        byte[] radiusState = new byte[1];
+        radiusState[0] = 10;
+        mockStatic(Radius.class);
 
-//    @Test(description = "Test case for start() method for userName.")
-//    public void teststart() throws Exception {
-//
-//      when(httpServletRequest.getParameter(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("casque1");
-//      //when(context.setProperty(CasqueAuthenticatorConstants.USER_NAME)),anyString();
-//
-//
-//
-//          Whitebox.setInternalState();
-//          Assert.assertEquals(status, AuthenticatorFlowStatus.SUCCESS_COMPLETED);
-//    }
+        when(context.isLogoutRequest()).thenReturn(false);
+        when(context.getProperty(anyString())).thenReturn(radiusState);
+        when(httpServletRequest.getParameter(anyString())).thenReturn(null);
+        AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
+        Assert.assertEquals(status, AuthenticatorFlowStatus.SUCCESS_COMPLETED);
+    }
 
 
-
-
-
-//
-//        mockStatic(CasqueAuthenticatorServiceDataHolder.class);
-//        mockStatic(IdentityTenantUtil.class);
-//        mockStatic(User.class);
-//
-//        int radiusResponseType =3;
-//        //String userName ="casque1";
-//        mockStatic(Radius.class);
-//
-//
-//        when(context.isLogoutRequest()).thenReturn(false);
-//        when(context.getProperty(anyString())).thenReturn(null);
-//        when(CasqueAuthenticatorServiceDataHolder.getInstance()).thenReturn(casqueAuthenticatorServiceDataHolder);
-//        when(casqueAuthenticatorServiceDataHolder.getRealmService()).thenReturn(realmService);
-//        when(realmService.getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(anyString()))).thenReturn(tenantUserRealm);
-//        when(tenantUserRealm.getUserStoreManager()).thenReturn(userStoreManager);
-//        when(userStoreManager.getUserClaimValue(anyString(), anyString(), anyString())).thenReturn("FFF 000001");
-////        when(context.getCasqueTokenId(anyString())).thenReturn(token);
-//
-////        when(httpServletRequest.getParameter(anyString())).thenReturn("Login");
-////        when(context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("casque1");
-////        when(httpServletRequest.getParameter(CasqueAuthenticatorConstants.RESPONSE)).thenReturn("ACCESS_CHALLENGE ");
-////        when(Radius.sendRequest(anyString(), anyString(), (byte[]) anyObject())).thenReturn(radiusResponse);
-////        when(radiusResponse.getType()).thenReturn(radiusResponseType);
-////        User user = new User();
-////        when(User.getUserFromUserName(anyString())).thenReturn(user);
-////        when(Whitebox.invokeMethod(casqueAuthenticator, "initiateAuthRequest",
-////                httpServletResponse, context, ""))
-////                .thenReturn(user);
-//        // when((String)context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("wso2");
-////        AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
-////        Assert.assertEquals(status, AuthenticatorFlowStatus.INCOMPLETE);
-//        casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
-////         Whitebox.invokeMethod(casqueAuthenticator, "start", httpServletRequest, httpServletResponse, context);
 }
