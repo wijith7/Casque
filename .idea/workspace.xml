@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="568a0297-420d-42d4-9d70-a74a3017383c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/20.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/21.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java" afterDir="false" />
@@ -12,7 +12,6 @@
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/Radius.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/Radius.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusPacket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
@@ -20,112 +19,25 @@
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/jacoco-unit.exec" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/branchfc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/branchnc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/branchpc.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/bundle.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/class.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/down.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/greenbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/group.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/method.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/package.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/prettify.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/prettify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/redbar.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/report.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/report.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/session.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/sort.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/source.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-resources/up.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco-sessions.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/jacoco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.internal/CasqueAuthenticatorServiceComponent.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.internal/CasqueAuthenticatorServiceComponent.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.internal/CasqueAuthenticatorServiceDataHolder.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.internal/CasqueAuthenticatorServiceDataHolder.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.internal/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.internal/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/Radius.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/Radius.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/RadiusPacket.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/RadiusPacket.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/RadiusResponse.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/RadiusResponse.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator.radius/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/AuthPages.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/AuthPages.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/CasqueAuthenticator.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/CasqueAuthenticator.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/CasqueConfig.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/CasqueConfig.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.authenticator/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.constants/CasqueAuthenticatorConstants.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.constants/CasqueAuthenticatorConstants.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.constants/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.constants/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/CasqueException.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/CasqueException.java.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/TestSuite.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/bullet_point.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/collapseall.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/emailable-report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/failed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/jquery-1.7.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/junitreports/TEST-org.wso2.carbon.identity.casque.authenticator.authenticator.AuthPagesTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/junitreports/TEST-org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/navigator-bullet.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/Surefire test.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/classes.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/groups.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/main.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/methods-alphabetical.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/methods-not-run.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/methods.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/reporter-output.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/testng.xml.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/Surefire suite/toc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/old/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/passed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/skipped.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/testng-reports.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/testng-reports.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/testng-results.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/testng.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/test-classes/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPagesTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/test-classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticatorTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.md" beforeDir="false" afterPath="$PROJECT_DIR$/config.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/artifacts.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/artifacts.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/content.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/content.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/plugins/org.wso2.carbon.identity.casque.authenticator_1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/plugins/org.wso2.carbon.identity.casque.authenticator_1.1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/plugins/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/DEPENDENCIES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/NOTICE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/p2.inf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo1.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/plugins/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/DEPENDENCIES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/NOTICE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/p2.inf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1544009663259/featureExtract/plugins/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -159,11 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CasqueAuthenticatorConstants.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CasqueAuthenticatorConstants.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
-              <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -195,8 +107,22 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1288" />
+            <state relative-caret-position="-550">
+              <caret line="10" column="69" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="69" />
+            </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-148" />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="p2.inf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/p2.inf">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="casque.conf" pinned="false" current-in-tab="false">
@@ -208,12 +134,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip">
-          <provider selected="true" editor-type-id="apk-viewer" />
-        </entry>
-      </file>
-      <file leaf-file-name="p2.inf" pinned="false" current-in-tab="false">
+      <file leaf-file-name="p2.inf" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/p2.inf">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
@@ -221,15 +142,6 @@
       <file leaf-file-name="feature.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/feature/etc/feature.properties">
           <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="casque.conf" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/casque.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -247,6 +159,7 @@
       <find>processAuthenticationResponse</find>
       <find>clearProperties</find>
       <find>lo</find>
+      <find>war</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -300,87 +213,7 @@
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
               <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="internal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="constants" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
               <item name="feature" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="feature" type="462c0819:PsiDirectoryNode" />
-              <item name="etc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
@@ -398,26 +231,13 @@
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
               <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="feature" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator.feature" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
               <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="feature" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator.feature" type="462c0819:PsiDirectoryNode" />
               <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="p2-repo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="feature" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator.feature" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="p2-repo" type="462c0819:PsiDirectoryNode" />
-              <item name="plugins" type="462c0819:PsiDirectoryNode" />
+              <item name="maven-shared-archive-resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -721,10 +541,10 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.043269232" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="CheckStyle" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.46514422" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.46514422" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3529015" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3529015" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -970,9 +790,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/AbstractApplicationAuthenticator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -998,19 +815,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/p2.inf">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/casque.conf">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1288" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/casque.conf">
@@ -1022,9 +831,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip">
       <provider selected="true" editor-type-id="apk-viewer" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/p2.inf">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/feature/etc/feature.properties">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1063,9 +869,27 @@
     <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-550">
+          <caret line="10" column="69" selection-start-line="10" selection-start-column="66" selection-end-line="10" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/p2.inf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/p2.inf">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
   <component name="masterDetails">
