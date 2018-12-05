@@ -20,6 +20,7 @@ package org.wso2.carbon.identity.casque.authenticator.authenticator;
 import org.wso2.carbon.identity.casque.authenticator.constants.CasqueAuthenticatorConstants;
 import org.wso2.carbon.identity.casque.authenticator.exception.CasqueException;
 import org.wso2.carbon.utils.CarbonUtils;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.BufferedReader;
@@ -46,15 +47,14 @@ public class CasqueConfig {
             return;
         }
         if (line.startsWith(CasqueAuthenticatorConstants.CONF_CASQUE_ADDRESS)) {
-            String server = line.substring(CasqueAuthenticatorConstants.CONF_CASQUE_ADDRESS.length())
-		.trim();
+            String server = line.substring(CasqueAuthenticatorConstants.CONF_CASQUE_ADDRESS.length()).trim();
             casqueAddress = InetAddress.getByName(server);
             return;
         }
         if (line.startsWith(CasqueAuthenticatorConstants.CONF_CASQUE_PORT)) {
             String port = line.substring(CasqueAuthenticatorConstants.CONF_CASQUE_PORT.length()).trim();
             casquePort = Integer.parseInt(port);
-	    return;
+            return;
         }
         if (line.startsWith(CasqueAuthenticatorConstants.CONF_LOCAL_PORT)) {
             String port = line.substring(CasqueAuthenticatorConstants.CONF_LOCAL_PORT.length()).trim();
@@ -66,15 +66,16 @@ public class CasqueConfig {
 
         if (!configLoaded) {
             try {
-                File casqueConf = new File(CarbonUtils.getCarbonConfigDirPath() + File.separator + CasqueAuthenticatorConstants.CONF_FILE);
+                File casqueConf = new File(CarbonUtils.getCarbonConfigDirPath() + File.separator
+                        + CasqueAuthenticatorConstants.CONF_FILE);
                 InputStream in = new FileInputStream(casqueConf);
-		BufferedReader br = new BufferedReader(new InputStreamReader(in));
-		String line;
-		while ((line = br.readLine()) != null) {
-		    parseLine(line);
-		}
-		br.close();
-		configLoaded = true;
+                BufferedReader br = new BufferedReader(new InputStreamReader(in));
+                String line;
+                while ((line = br.readLine()) != null) {
+                    parseLine(line);
+                }
+                br.close();
+                configLoaded = true;
             } catch (IOException e) {
                 throw new CasqueException("Failed to load Config file " + e.getMessage());
             }

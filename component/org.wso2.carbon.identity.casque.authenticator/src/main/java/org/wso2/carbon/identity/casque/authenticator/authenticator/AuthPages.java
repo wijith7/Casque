@@ -46,7 +46,8 @@ public class AuthPages implements Serializable {
         response.getOutputStream().print(data);
     }
 
-    public void challengePage(HttpServletResponse response, String sessionDataKey, String challenge) throws CasqueException {
+    public void challengePage(HttpServletResponse response, String sessionDataKey, String challenge) throws
+            CasqueException {
 
         try {
             String resource = loadResource(CasqueAuthenticatorConstants.QR_PLAYER);
@@ -60,17 +61,26 @@ public class AuthPages implements Serializable {
         }
     }
 
-    private String loadResource(String path) {
+    private String loadResource(String path) throws
+            CasqueException {
 
         InputStream in = AuthPages.class.getClassLoader().getResourceAsStream(path);
         if (in != null) {
             BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-            char[] buffer = new char[20000];
             try {
+                char[] buffer = new char[20000];
                 int len = reader.read(buffer, 0, 20000);
                 return new String(buffer, 0, len);
+
             } catch (IOException e) {
-                return e.getMessage();
+                throw new CasqueException(e.getMessage(), e);
+
+            } finally {
+                try {
+                    in.close();
+                } catch (IOException e) {
+
+                }
             }
         }
         return null;

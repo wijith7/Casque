@@ -50,6 +50,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
     private static final String TOKEN_ID_FORMAT = "^[a-fA-F0-9]{3} [0-9]{6}$";  // e.g. "FFF 000001"
     private static final AuthPages authPages = new AuthPages();
 
+    /* Getting userName and tokenId from the UserStoreManager */
     private String getCasqueTokenId(String userName) throws CasqueException {
 
         try {
@@ -58,28 +59,35 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
                     .getUserStoreManager();
 
             // Get the Token ID assigned to userName
-            String tokenId = userStoreManager.getUserClaimValue(userName, CASQUE_SNR_CLAIM, null);
-            if (tokenId == null) {
+            Map<String, String> tokenIdMap = userStoreManager.getUserClaimValues(userName, new String[]{CASQUE_SNR_CLAIM}, null);
+
+            if(tokenIdMap.isEmpty()) {
                 throw new CasqueException("User: " + userName + ", Token ID is null");
             }
-            if (tokenId.matches(TOKEN_ID_FORMAT)) {
+            String tokenId = tokenIdMap.get(CASQUE_SNR_CLAIM);
+            if(tokenId.matches(TOKEN_ID_FORMAT)) {
                 return tokenId;
             }
             throw new CasqueException("User: " + userName + ", Token ID bad format: " + tokenId);
 
         } catch (org.wso2.carbon.user.api.UserStoreException e) {
-            log.error("User Store Exception: " + e.getMessage());
+            log.info("User Store Exception: " + e.getMessage());
         }
         throw new CasqueException("Unable to get token id for user " + userName);
     }
 
+     /* Initiate the authentication request */
     private AuthenticatorFlowStatus start(HttpServletRequest request, HttpServletResponse response,
                                           AuthenticationContext context) throws AuthenticationFailedException {
 
         try {
             String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);
-            context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);
 
+                if (userName == null){
+
+                    throw new CasqueException(" userName is null");
+                }
+             context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);
             String tokenId = getCasqueTokenId(userName);
             String tokenIdPlusName = tokenId + userName;
 
@@ -187,7 +195,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
             }
         }
 
-        log.error("Login Cancelled");
+        log.info("Login Cancelled");
         return AuthenticatorFlowStatus.SUCCESS_COMPLETED;
     }
 

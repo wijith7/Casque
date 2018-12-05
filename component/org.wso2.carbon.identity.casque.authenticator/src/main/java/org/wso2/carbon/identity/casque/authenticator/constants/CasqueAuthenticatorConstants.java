@@ -19,14 +19,14 @@ package org.wso2.carbon.identity.casque.authenticator.constants;
 
 public class CasqueAuthenticatorConstants {
 
-    public static final String AUTHENTICATOR_NAME = "CASQUEAuthenticator";
-    public static final String AUTHENTICATOR_FRIENDLY_NAME = "CASQUEAuth";
+    public static final String AUTHENTICATOR_NAME = "casque_authenticator";
+    public static final String AUTHENTICATOR_FRIENDLY_NAME = "casque_auth";
     public static final String USER_NAME = "username";
-    public static final String PASSWORD = "password";
+    //public static final String PASSWORD = "password";
     public static final String BTN_ACTION = "btnAction";
     public static final String RESPONSE = "response";
     public static final String RADIUS_STATE = "state";
-    public static final String CHALLENGE = "challenge";
+    //public static final String CHALLENGE = "challenge";
     public static final String CONTENT_TYPE = "text/html;charset=UTF-8";
     public static final String QR_PLAYER = "/qr_player.tmp";
     public static final String CASQUE_CHALLENGE = "<%CASQUE_CHALLENGE%>";

@@ -28,5 +28,12 @@ public class CasqueException extends Exception {
 
         super(message);
     }
+    public CasqueException(String message, Throwable e) {
+
+        super(message);
+    }
+
+
+
 
 }
