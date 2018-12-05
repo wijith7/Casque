@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
 Axis2Module: org.wso2.carbon.identity.casque.authenticator-1.1.0
-Bnd-LastModified: 1543897664432
+Bnd-LastModified: 1544009661524
 Build-Jdk: 1.8.0_171
 Built-By: wijith
 Bundle-Description: Casque Authenticator connector for WSO2 Identity Ser
@@ -28,20 +28,21 @@ Export-Package: org.wso2.carbon.identity.casque.authenticator.authentica
  e.authenticator.exception;version="1.1.0"
 Import-Package: org.wso2.carbon.user.core.service;version="4.4.11",javax
  .servlet;version="[2.6,3)",javax.servlet.http;version="[2.6,3)",org.apa
- che.commons.logging;resolution:=optional;version="[1.2,2)",org.osgi.fra
- mework;resolution:=optional;version="[1.7,2)",org.osgi.service.componen
- t;resolution:=optional;version="[1.2,2)",org.wso2.carbon.identity.appli
- cation.authentication.framework;resolution:=optional;version="[5.7,6)",
- org.wso2.carbon.identity.application.authentication.framework.context;r
- esolution:=optional;version="[5.7,6)",org.wso2.carbon.identity.applicat
- ion.authentication.framework.exception;resolution:=optional;version="[5
- .7,6)",org.wso2.carbon.identity.application.authentication.framework.mo
- del;resolution:=optional;version="[5.7,6)",org.wso2.carbon.identity.app
- lication.authentication.framework.util;resolution:=optional;version="[5
- .7,6)",org.wso2.carbon.identity.application.common.model;resolution:=op
- tional;version="[5.7,6)",org.wso2.carbon.identity.core.util;resolution:
- =optional;version="[5.7,6)",org.wso2.carbon.user.api;resolution:=option
- al;version="[1.0,2)",org.wso2.carbon.utils;resolution:=optional;version
- ="[4.4,5)"
+ che.commons.lang;resolution:=optional;version="[2.6,3)",org.apache.comm
+ ons.logging;resolution:=optional;version="[1.2,2)",org.osgi.framework;r
+ esolution:=optional;version="[1.7,2)",org.osgi.service.component;resolu
+ tion:=optional;version="[1.2,2)",org.wso2.carbon.identity.application.a
+ uthentication.framework;resolution:=optional;version="[5.7,6)",org.wso2
+ .carbon.identity.application.authentication.framework.context;resolutio
+ n:=optional;version="[5.7,6)",org.wso2.carbon.identity.application.auth
+ entication.framework.exception;resolution:=optional;version="[5.7,6)",o
+ rg.wso2.carbon.identity.application.authentication.framework.model;reso
+ lution:=optional;version="[5.7,6)",org.wso2.carbon.identity.application
+ .authentication.framework.util;resolution:=optional;version="[5.7,6)",o
+ rg.wso2.carbon.identity.application.common.model;resolution:=optional;v
+ ersion="[5.7,6)",org.wso2.carbon.identity.core.util;resolution:=optiona
+ l;version="[5.7,6)",org.wso2.carbon.user.api;resolution:=optional;versi
+ on="[1.0,2)",org.wso2.carbon.utils;resolution:=optional;version="[4.4,5
+ )"
 Service-Component: OSGI-INF/serviceComponents.xml
 Tool: Bnd-2.1.0.20130426-122213

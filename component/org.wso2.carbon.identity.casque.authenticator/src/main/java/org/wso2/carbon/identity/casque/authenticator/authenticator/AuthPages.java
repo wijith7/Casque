@@ -46,6 +46,9 @@ public class AuthPages implements Serializable {
         response.getOutputStream().print(data);
     }
 
+    /*
+    load challengPage
+    */
     public void challengePage(HttpServletResponse response, String sessionDataKey, String challenge) throws
             CasqueException {
 
@@ -57,31 +60,29 @@ public class AuthPages implements Serializable {
                 returnHtmlResponse(response, resource);
             }
         } catch (IOException e) {
-            throw new CasqueException(e.getMessage());
+            throw new CasqueException(" ChallengPage loading fail ", e);
         }
     }
 
+    /*
+    load casque QR player
+    */
     private String loadResource(String path) throws
             CasqueException {
 
         InputStream in = AuthPages.class.getClassLoader().getResourceAsStream(path);
         if (in != null) {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-            try {
+
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(in))) {
                 char[] buffer = new char[20000];
                 int len = reader.read(buffer, 0, 20000);
                 return new String(buffer, 0, len);
 
             } catch (IOException e) {
-                throw new CasqueException(e.getMessage(), e);
+                throw new CasqueException(" Casque player loading fail ", e);
 
-            } finally {
-                try {
-                    in.close();
-                } catch (IOException e) {
-
-                }
             }
+
         }
         return null;
     }

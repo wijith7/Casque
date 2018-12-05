@@ -41,17 +41,17 @@ public class CasqueAuthenticatorServiceComponent {
             ctxt.getBundleContext().registerService(ApplicationAuthenticator.class.getName(), casqueAuth,
                     null);
             if (log.isDebugEnabled()) {
-                log.debug("CasqueAuthenticator bundle is activated");
+                log.debug(" CasqueAuthenticator bundle is activated ");
             }
         } catch (Throwable e) {
-            log.error("CasqueAuthenticator bundle activation Failed", e);
+            log.error(" CasqueAuthenticator bundle activation Failed ", e);
         }
     }
 
     protected void deactivate(ComponentContext ctxt) {
 
         if (log.isDebugEnabled()) {
-            log.debug("CasqueAuthenticator bundle is deactivated");
+            log.debug(" CasqueAuthenticator bundle is deactivated ");
         }
     }
 

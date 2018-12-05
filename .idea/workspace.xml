@@ -2,19 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="568a0297-420d-42d4-9d70-a74a3017383c" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/Radius.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/Radius.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusPacket.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusPacket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/AuthPagesTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.class" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/classes/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/jacoco-unit.exec" beforeDir="false" />
@@ -72,7 +77,6 @@
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/CasqueException.java.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/coverage-reports/site/org.wso2.carbon.identity.casque.authenticator.exception/index.source.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/Surefire suite/Surefire test.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/Surefire suite/Surefire test.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
@@ -107,22 +111,21 @@
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/test-classes/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPagesTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/test-classes/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticatorTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config.md" beforeDir="false" afterPath="$PROJECT_DIR$/config.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/org.wso2.carbon.identity.casque.authenticator.feature.iml" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/org.wso2.carbon.identity.casque.authenticator.feature.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/artifacts.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/artifacts.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/content.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/content.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/plugins/org.wso2.carbon.identity.casque.authenticator_1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/plugins/org.wso2.carbon.identity.casque.authenticator_1.1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/DEPENDENCIES" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/NOTICE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/p2.inf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/plugins/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543207146661/featureExtract/plugins/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/target/org.wso2.carbon.identity.casque.authenticator-1.1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/DEPENDENCIES" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/META-INF/NOTICE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.conf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/casque.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/feature.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/tmp.1543897665929/featureExtract/features/org.wso2.carbon.identity.casque.authenticator.feature_1.1.0/p2.inf" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -143,14 +146,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CasqueAuthenticator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CasqueAuthenticator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-43">
-              <caret line="46" column="70" lean-forward="true" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
+            <state relative-caret-position="504">
+              <caret line="71" column="51" lean-forward="true" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
               <folding>
+                <element signature="e#0#11595#0" expanded="true" />
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CasqueAuthenticatorConstants.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -158,21 +171,31 @@
       <file leaf-file-name="CasqueConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            <state relative-caret-position="458">
+              <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#3354#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CasqueAuthenticatorConstants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java">
+      <file leaf-file-name="AuthPages.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="-217">
+              <caret line="39" column="95" lean-forward="true" selection-start-line="39" selection-start-column="95" selection-end-line="39" selection-end-column="95" />
               <folding>
-                <element signature="e#0#2031#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1288" />
           </provider>
         </entry>
       </file>
@@ -190,39 +213,44 @@
           <provider selected="true" editor-type-id="apk-viewer" />
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="p2.inf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/p2.inf">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="DefaultStepHandler.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/step/impl/DefaultStepHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="164" selection-start-line="164" selection-end-line="164" />
-            </state>
-          </provider>
+      <file leaf-file-name="feature.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feature/etc/feature.properties">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="DefaultStepBasedSequenceHandler.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/DefaultStepBasedSequenceHandler.java">
+      <file leaf-file-name="casque.conf" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/casque.conf">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="188" selection-start-line="188" selection-end-line="188" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DefaultAuthenticationRequestHandler.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/request/impl/DefaultAuthenticationRequestHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+            <state relative-caret-position="165">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>DefaultStepHand</find>
+      <find>unable</find>
+      <find>username</find>
+      <find>Friendlyname</find>
+      <find>debug</find>
+      <find>panhandle</find>
+      <find>canhandle</find>
+      <find>canHandle</find>
+      <find>processAuthenticationResponse</find>
+      <find>clearProperties</find>
+      <find>lo</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -230,16 +258,24 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.java" />
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/Radius.java" />
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusPacket.java" />
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusResponse.java" />
         <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java" />
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java" />
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.java" />
         <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java" />
+        <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.java" />
         <option value="$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="23" />
-    <option name="width" value="1680" />
-    <option name="height" value="961" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="72" />
+    <option name="y" value="57" />
+    <option name="width" value="1524" />
+    <option name="height" value="952" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -321,54 +357,30 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="authenticator" type="462c0819:PsiDirectoryNode" />
+              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
+              <item name="internal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
               <item name="constants" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
               <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="authenticator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="component" type="462c0819:PsiDirectoryNode" />
-              <item name="org.wso2.carbon.identity.casque.authenticator" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="feature" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
               <item name="casque_authenticator" type="462c0819:PsiDirectoryNode" />
               <item name="feature" type="462c0819:PsiDirectoryNode" />
+              <item name="etc" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
@@ -407,10 +419,6 @@
               <item name="p2-repo" type="462c0819:PsiDirectoryNode" />
               <item name="plugins" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="casque-authenticator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -437,7 +445,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Remote.Unnamed">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -468,6 +476,151 @@
         <option name="LOCAL" value="false" />
       </RunnerSettings>
     </configuration>
+    <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="org.wso2.carbon.identity.casque.authenticator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.wso2.carbon.identity.casque.authenticator.authenticator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator" />
+      <option name="MAIN_CLASS_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest" />
+      <option name="METHOD_NAME" value="testGetCasqueTokenId" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="CasqueAuthenticatorTest.testProcessRadiusState2" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="org.wso2.carbon.identity.casque.authenticator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.wso2.carbon.identity.casque.authenticator.authenticator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator" />
+      <option name="MAIN_CLASS_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest" />
+      <option name="METHOD_NAME" value="testProcessRadiusState2" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="CasqueAuthenticatorTest.testProcessRadiusState3" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="org.wso2.carbon.identity.casque.authenticator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.wso2.carbon.identity.casque.authenticator.authenticator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator" />
+      <option name="MAIN_CLASS_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest" />
+      <option name="METHOD_NAME" value="testProcessRadiusState3" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="CasqueAuthenticatorTest.testProcessRadiusState5" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="org.wso2.carbon.identity.casque.authenticator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.wso2.carbon.identity.casque.authenticator.authenticator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator" />
+      <option name="MAIN_CLASS_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest" />
+      <option name="METHOD_NAME" value="testProcessRadiusState5" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="CasqueAuthenticatorTest.testProcessRadiusStateLoginFail" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="org.wso2.carbon.identity.casque.authenticator" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.wso2.carbon.identity.casque.authenticator.authenticator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator" />
+      <option name="MAIN_CLASS_NAME" value="org.wso2.carbon.identity.casque.authenticator.authenticator.CasqueAuthenticatorTest" />
+      <option name="METHOD_NAME" value="testProcessRadiusStateLoginFail" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -490,6 +643,23 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Remote.Unnamed" />
+      <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusState5" />
+      <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusState2" />
+      <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusState3" />
+      <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusStateLoginFail" />
+      <item itemvalue="TestNG.CasqueAuthenticatorTest.testGetCasqueTokenId" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.CasqueAuthenticatorTest.testGetCasqueTokenId" />
+        <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusStateLoginFail" />
+        <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusState3" />
+        <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusState2" />
+        <item itemvalue="TestNG.CasqueAuthenticatorTest.testProcessRadiusState5" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -504,32 +674,64 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="CasqueAuthenticatorTest_testProcessRadiusState5 - 2018.12.05 at 14h 04m 42s.xml">
+      <configuration name="CasqueAuthenticatorTest.testProcessRadiusState5" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testProcessRadiusState2 - 2018.12.05 at 14h 05m 01s.xml">
+      <configuration name="CasqueAuthenticatorTest.testProcessRadiusState2" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testProcessRadiusState3 - 2018.12.05 at 14h 05m 14s.xml">
+      <configuration name="CasqueAuthenticatorTest.testProcessRadiusState3" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testProcessRadiusStateLoginFail - 2018.12.05 at 14h 05m 21s.xml">
+      <configuration name="CasqueAuthenticatorTest.testProcessRadiusStateLoginFail" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testGetCasqueTokenId - 2018.12.05 at 14h 12m 44s.xml">
+      <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testGetCasqueTokenId - 2018.12.05 at 14h 13m 04s.xml">
+      <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testGetCasqueTokenId - 2018.12.05 at 14h 20m 17s.xml">
+      <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testGetCasqueTokenId - 2018.12.05 at 14h 39m 24s.xml">
+      <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testGetCasqueTokenId - 2018.12.05 at 14h 39m 46s.xml">
+      <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="CasqueAuthenticatorTest_testGetCasqueTokenId - 2018.12.05 at 14h 40m 13s.xml">
+      <configuration name="CasqueAuthenticatorTest.testGetCasqueTokenId" configurationId="TestNG" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="958" extended-state="6" />
-    <editor active="true" />
+    <frame x="72" y="57" width="1524" height="952" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="right" id="Capture Analysis" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.043269232" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="CheckStyle" />
-      <window_info anchor="bottom" id="Terminal" weight="0.33174226" />
+      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.46514422" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24969475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3529015" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" />
       <window_info anchor="right" id="Theme Preview" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.398568" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29621848" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -545,61 +747,270 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java</url>
-          <line>56</line>
+          <line>59</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java</url>
+          <line>141</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceDataHolder.java</url>
+          <line>32</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java</url>
+          <line>163</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-collections/commons-collections/3.1/commons-collections-3.1.jar!/org/apache/commons/collections/CollectionUtils.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="71" column="6" selection-start-line="71" selection-start-column="6" selection-end-line="71" selection-end-column="6" />
+        <state relative-caret-position="-2051">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-lang/wso2/commons-lang/2.6.0.wso2v1/commons-lang-2.6.0.wso2v1.jar!/org/apache/commons/lang/StringUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#569#570#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/AbstractMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="93" column="19" selection-start-line="93" selection-start-column="19" selection-end-line="93" selection-end-column="19" />
+          <folding>
+            <element signature="e#2469#2470#0" expanded="true" />
+            <element signature="e#2503#2504#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina/7.0.73/tomcat-catalina-7.0.73.jar!/org/apache/catalina/connector/Request.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="572" column="30" selection-start-line="572" selection-start-column="30" selection-end-line="572" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/equinox/javax.servlet/3.0.0.v201112011016/javax.servlet-3.0.0.v201112011016.jar!/javax/servlet/ServletRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/org.wso2.carbon.user.core/4.4.11/org.wso2.carbon.user.core-4.4.11.jar!/org/wso2/carbon/user/core/common/AbstractUserStoreManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="453" selection-start-line="453" selection-end-line="453" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/lang/Throwable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="263" column="11" selection-start-line="263" selection-start-column="11" selection-end-line="263" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding>
+            <element signature="e#1663#1664#0" expanded="true" />
+            <element signature="e#1693#1694#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.core/5.7.5/org.wso2.carbon.identity.core-5.7.5.jar!/org/wso2/carbon/identity/core/bean/context/MessageContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/context/AuthenticationContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="200" column="18" lean-forward="true" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="18" />
+          <folding>
+            <element signature="e#6347#6348#0" expanded="true" />
+            <element signature="e#6391#6392#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/exception/CasqueException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/request/impl/DefaultAuthenticationRequestHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/request/impl/DefaultRequestCoordinator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="178" selection-start-line="178" selection-end-line="178" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/CommonAuthenticationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="37" selection-start-line="37" selection-end-line="37" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/step/impl/DefaultStepHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="167">
           <caret line="164" selection-start-line="164" selection-end-line="164" />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/sequence/impl/DefaultStepBasedSequenceHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        <state relative-caret-position="197">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/handler/request/impl/DefaultAuthenticationRequestHandler.java">
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusPacket.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
+        <state relative-caret-position="360">
+          <caret line="47" column="50" selection-start-line="47" selection-start-column="50" selection-end-line="47" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.java">
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/RadiusResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="255">
+          <caret line="33" column="46" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/radius/Radius.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/org.wso2.carbon.user.api/4.4.11/org.wso2.carbon.user.api-4.4.11.jar!/org/wso2/carbon/user/api/UserStoreManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/org.wso2.carbon.user.core/4.4.11/org.wso2.carbon.user.core-4.4.11.jar!/org/wso2/carbon/user/core/UserStoreManager.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/test/java/org.wso2.carbon.identity.casque.authenticator/authenticator/CasqueAuthenticatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2092">
+          <caret line="150" column="79" selection-start-line="150" selection-start-column="79" selection-end-line="150" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/ApplicationAuthenticator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/pom.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/wso2/carbon/identity/framework/org.wso2.carbon.identity.application.authentication.framework/5.7.5/org.wso2.carbon.identity.application.authentication.framework-5.7.5-sources.jar!/org/wso2/carbon/identity/application/authentication/framework/AbstractApplicationAuthenticator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="450">
+          <caret line="68" column="20" selection-start-line="68" selection-start-column="20" selection-end-line="68" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceDataHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/internal/CasqueAuthenticatorServiceComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="53" column="66" selection-start-line="53" selection-start-column="66" selection-end-line="53" selection-end-column="66" />
           <folding>
-            <element signature="e#0#2031#0" expanded="true" />
+            <element signature="e#0#2571#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/p2.inf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/p2-repo/casque.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1288" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/casque.conf">
@@ -612,13 +1023,47 @@
     <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/target/org.wso2.carbon.identity.casque.authenticator.feature-1.1.0.zip">
       <provider selected="true" editor-type-id="apk-viewer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java">
+    <entry file="file://$PROJECT_DIR$/feature/org.wso2.carbon.identity.casque.authenticator.feature/resources/p2.inf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/feature/etc/feature.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43">
-          <caret line="46" column="70" lean-forward="true" selection-start-line="46" selection-start-column="70" selection-end-line="46" selection-end-column="70" />
+        <state relative-caret-position="458">
+          <caret line="79" column="44" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#3354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/AuthPages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-217">
+          <caret line="39" column="95" lean-forward="true" selection-start-line="39" selection-start-column="95" selection-end-line="39" selection-end-column="95" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/authenticator/CasqueAuthenticator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="71" column="51" lean-forward="true" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#11595#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/component/org.wso2.carbon.identity.casque.authenticator/src/main/java/org/wso2/carbon/identity/casque/authenticator/constants/CasqueAuthenticatorConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="27" column="54" lean-forward="true" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
         </state>
       </provider>
     </entry>

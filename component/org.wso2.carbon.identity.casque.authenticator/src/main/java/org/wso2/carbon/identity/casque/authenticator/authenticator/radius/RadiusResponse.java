@@ -1,12 +1,12 @@
 /*
- * Copyright (c) 2018, DMS Ltd. (https://www.casque.co.uk) All Rights Reserved.
+ * Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
  *
- * DMS Ltd. licenses this file to you under the Apache License,
+ * WSO2 Inc. licenses this file to you under the Apache License,
  * Version 2.0 (the "License"); you may not use this file except
  * in compliance with the License.
- * you may obtain a copy of the License at
+ * You may obtain a copy of the License at
  *
- *   http://www.apache.org/licenses/LICENSE-2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing,
  * software distributed under the License is distributed on an
@@ -26,14 +26,14 @@ public class RadiusResponse implements Serializable {
     private byte[] state;
     private byte[] message;
 
-    public final static int ACCESS_CHALLENGE    = 11;
-    public final static int ACCESS_REJECT       =  3;
-    public final static int ACCESS_ACCEPT       =  2;
-    public final static int ACCESS_REQUEST      =  1;
+    public final static int ACCESS_CHALLENGE = 11;
+    public final static int ACCESS_REJECT = 3;
+    public final static int ACCESS_ACCEPT = 2;
+    public final static int ACCESS_REQUEST = 1;
     public final static int PACKET_LENGTH_ERROR = -1;
-    public final static int DIGEST_ERROR        = -2;
-    public final static int ATTRIBUTE_ERROR     = -3;
-    public final static int RADIUS_ERROR        = -4;
+    public final static int DIGEST_ERROR = -2;
+    public final static int ATTRIBUTE_ERROR = -3;
+    public final static int RADIUS_ERROR = -4;
 
     public RadiusResponse(int type) {
 

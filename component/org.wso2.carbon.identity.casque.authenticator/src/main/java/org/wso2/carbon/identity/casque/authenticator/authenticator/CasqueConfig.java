@@ -77,7 +77,7 @@ public class CasqueConfig {
                 br.close();
                 configLoaded = true;
             } catch (IOException e) {
-                throw new CasqueException("Failed to load Config file " + e.getMessage());
+                throw new CasqueException(" Failed to load Config file " + e.getMessage());
             }
         }
     }
