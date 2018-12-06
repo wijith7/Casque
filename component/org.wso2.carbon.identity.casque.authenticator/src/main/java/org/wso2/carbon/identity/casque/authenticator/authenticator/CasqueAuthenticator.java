@@ -65,7 +65,7 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
             Map<String, String> tokenIdMap = userStoreManager.getUserClaimValues(userName,
                     new String[]{CASQUE_SNR_CLAIM}, null);
 
-            if (tokenIdMap == null) {
+            if (tokenIdMap == null || tokenIdMap.get(CASQUE_SNR_CLAIM) == null) {
                 throw new CasqueException(" User: " + userName + ", Token ID is null ");
             }
             String tokenId = tokenIdMap.get(CASQUE_SNR_CLAIM);
@@ -84,14 +84,14 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
     Initiate the authentication request
     */
     private AuthenticatorFlowStatus start(HttpServletRequest request, HttpServletResponse response,
-                                          AuthenticationContext context) throws AuthenticationFailedException {
+                                          AuthenticationContext context) throws AuthenticationFailedException
+            , CasqueException {
 
         try {
             String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);
 
             if (StringUtils.isEmpty(userName)) {
-                log.error(" No username found ");
-                throw new CasqueException(" userName is null");
+                throw new CasqueException(" userName is null ");
             }
 
             context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);
@@ -116,12 +116,10 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
 
             if (radiusResponseType == RadiusResponse.ACCESS_REJECT) {
                 throw new InvalidCredentialsException(
-                        " User authentication failed due to invalid credentials ",
-                        User.getUserFromUserName(userName));
+                        " User authentication failed due to invalid credentials ", User.getUserFromUserName(userName));
             }
 
-            throw new InvalidCredentialsException(" User authentication failed due to " +
-                    radiusResponse.getError(),
+            throw new InvalidCredentialsException(" User authentication failed due to " + radiusResponse.getError(),
                     User.getUserFromUserName(userName));
         } catch (CasqueException ce) {
             throw new AuthenticationFailedException(ce.getMessage(), ce);
@@ -153,7 +151,12 @@ public class CasqueAuthenticator extends AbstractApplicationAuthenticator implem
         byte[] radiusState = (byte[]) context.getProperty(CasqueAuthenticatorConstants.RADIUS_STATE);
 
         if (radiusState == null) { // Initial request, get a challenge
-            AuthenticatorFlowStatus status = start(request, response, context);
+            AuthenticatorFlowStatus status = null;
+            try {
+                status = start(request, response, context);
+            } catch (CasqueException e) {
+                e.printStackTrace();
+            }
             context.setCurrentAuthenticator(getName());
             return status;
         }

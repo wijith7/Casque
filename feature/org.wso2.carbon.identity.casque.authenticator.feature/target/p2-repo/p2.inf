@@ -1,3 +1,0 @@
-instructions.configure = \
-org.eclipse.equinox.p2.touchpoint.natives.copy(source:${installFolder}/../features/org.wso2.carbon.identity.casque.authenticator.feature_${feature.version}/casque.conf,target:${installFolder}/../../conf/casque.conf,overwrite:true);\
-org.eclipse.equinox.p2.touchpoint.natives.copy(source:${installFolder}/../features/org.wso2.carbon.identity.casque.authenticator.feature_${feature.version}/casque.war,target:${installFolder}/../../deployment/server/webapps/casque.war,overwrite:true);\
