@@ -26,42 +26,13 @@ To download the CASQUE-SNR artifacts, go to CASQUE-SNR on [WSO2 Store](https://s
 
 
 
-(Artifacts contains P2-repo. P2-repo can generate by casque_authenticator, you can find repo in casque_authenticator/feature/org.wso2.carbon.identity.casque.authenticator.feature/target) 
+Artifacts contains org.wso2.carbon.identity.casque.authenticator_1.1.0.jar 
+(The jar can generate by casque_authenticator, you can find this in casque_authenticator/component/org.wso2.carbon.identity.casque.authenticator/target),casque.war and casque.conf
 
 
-## Follow the steps given below to install the feature
-
-1. [Start](https://docs.wso2.com/display/IS540/Running+the+Product) the Identity Server      and log in. (If you have not already done so)
-2. In the Configure tab, click Features and go to the Repository Management tab.
-
-    ![1](images/1.png "1")
-
-    ![2](images/2.png "2")
-
-3. Click Add Repository
-
-    ![3](images/3.png "3")
-
-4. Give a Name and the Path (Click Local radio button) to the P2-repo that you can find     in the Artifacts,
-5. Click Add.
-
-    ![4](images/4.png "4")
-
-6. Go to the Available Features
-
-    ![5](images/5.png "5")
-
-7. Untick the Group features by category and click Find Feature button then tick CASQUE-SNR Authenticator and click Install. 
-
-    ![6](images/6.png "6")
-
-8. Then accept the terms of the license agreement and click next.
-
-    ![7](images/7.png "7")
-
-9. And click Restart Now
-
-    ![8](images/8.png "8")
+1. Copy the connector (org.wso2.carbon.identity.casque.authenticator_1.1.0.jar) into <IS_HOME>/repository/components/plugins directory.
+2. Copy the casque.conf into <IS_HOME>/repository/deployment/server/webapps directory.
+3. Copy the casque.conf into <IS_HOME>/repository/conf directory.
 
 ## Set claims
 
