@@ -30,7 +30,7 @@ Artifacts contains org.wso2.carbon.identity.casque.authenticator_1.1.0.jar
 (The jar can generate by casque_authenticator, you can find this in casque_authenticator/component/org.wso2.carbon.identity.casque.authenticator/target),casque.war and casque.conf
 
 
-1. Copy the connector (org.wso2.carbon.identity.casque.authenticator_1.1.0.jar) into <IS_HOME>/repository/components/plugins directory.
+1. Copy the connector (org.wso2.carbon.identity.casque.authenticator_1.1.0.jar) into <IS_HOME>/repository/components/dropins directory.
 2. Copy the casque.conf into <IS_HOME>/repository/deployment/server/webapps directory.
 3. Copy the casque.conf into <IS_HOME>/repository/conf directory.
 
