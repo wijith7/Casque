@@ -17,8 +17,12 @@
  */
 package org.wso2.carbon.identity.casque.authenticator.authenticator;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.wso2.carbon.identity.casque.authenticator.authenticator.radius.RadiusPacket;
 import org.wso2.carbon.identity.casque.authenticator.constants.CasqueAuthenticatorConstants;
 import org.wso2.carbon.identity.casque.authenticator.exception.CasqueException;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,10 +31,10 @@ import java.io.InputStreamReader;
 import java.io.Serializable;
 import javax.servlet.http.HttpServletResponse;
 
-public class AuthPages implements Serializable {
+class AuthPages implements Serializable {
 
     private static final long serialVersionUID = 4341535155455223655L;
-
+    private static final Log log = LogFactory.getLog(RadiusPacket.class);
     private void returnHtmlResponse(HttpServletResponse response, String data) throws IOException {
 
         response.setContentType(CasqueAuthenticatorConstants.CONTENT_TYPE);
@@ -46,10 +50,14 @@ public class AuthPages implements Serializable {
         response.getOutputStream().print(data);
     }
 
-    /*
-    load challengPage
-    */
-    public void challengePage(HttpServletResponse response, String sessionDataKey, String challenge) throws
+    /**
+     *load the challengPage
+     * @param response : http servelet request
+     * @param sessionDataKey ,
+     * @param challenge ,
+     * @throws CasqueException
+     */
+    void challengePage(HttpServletResponse response, String sessionDataKey, String challenge) throws
             CasqueException {
 
         try {
@@ -58,31 +66,32 @@ public class AuthPages implements Serializable {
                 resource = resource.replace(CasqueAuthenticatorConstants.CASQUE_CHALLENGE, challenge);
                 resource = resource.replace(CasqueAuthenticatorConstants.SESSION_DATA_KEY, sessionDataKey);
                 returnHtmlResponse(response, resource);
+            }else{
+                log.error("QR player resources are not available");
             }
         } catch (IOException e) {
-            throw new CasqueException(" ChallengPage loading fail ", e);
+            throw new CasqueException("Failed to load the challenge page.", e);
         }
     }
 
-    /*
-    load casque QR player
-    */
+    /**
+     * load the casque QR player
+     * @param path ,
+     * @return ,
+     * @throws CasqueException
+     */
     private String loadResource(String path) throws
             CasqueException {
 
         InputStream in = AuthPages.class.getClassLoader().getResourceAsStream(path);
         if (in != null) {
-
             try (BufferedReader reader = new BufferedReader(new InputStreamReader(in))) {
                 char[] buffer = new char[20000];
                 int len = reader.read(buffer, 0, 20000);
                 return new String(buffer, 0, len);
-
             } catch (IOException e) {
-                throw new CasqueException(" Casque player loading fail ", e);
-
+                throw new CasqueException("Failed to load the casque QR player.", e);
             }
-
         }
         return null;
     }

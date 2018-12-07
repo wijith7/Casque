@@ -51,169 +51,178 @@ import javax.servlet.http.HttpServletResponse;
     private static final String TOKEN_ID_FORMAT = &quot;^[a-fA-F0-9]{3} [0-9]{6}$&quot;;  // e.g. &quot;FFF 000001&quot;
 <span class="fc" id="L52">    private static final AuthPages authPages = new AuthPages();</span>
 
-    /*
-    Getting tokenId from the UserStoreManager
-    */
+    /**
+     *  Getting tokenId from the UserStoreManager.
+     * @param userName ,
+     * @return ,
+     * @throws CasqueException
+     */
     private String getCasqueTokenId(String userName) throws CasqueException {
 
         try {
-<span class="fc" id="L60">            UserStoreManager userStoreManager = CasqueAuthenticatorServiceDataHolder.getInstance()</span>
-<span class="fc" id="L61">                    .getRealmService().getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(userName))</span>
-<span class="fc" id="L62">                    .getUserStoreManager();</span>
+<span class="fc" id="L63">            UserStoreManager userStoreManager = CasqueAuthenticatorServiceDataHolder.getInstance()</span>
+<span class="fc" id="L64">                    .getRealmService().getTenantUserRealm(IdentityTenantUtil.getTenantIdOfUser(userName))</span>
+<span class="fc" id="L65">                    .getUserStoreManager();</span>
 
-            // Get the Token ID assigned to userName
-<span class="fc" id="L65">            Map&lt;String, String&gt; tokenIdMap = userStoreManager.getUserClaimValues(userName,</span>
+            // Getting the Token ID assigned to userName
+<span class="fc" id="L68">            Map&lt;String, String&gt; tokenIdMap = userStoreManager.getUserClaimValues(userName,</span>
                     new String[]{CASQUE_SNR_CLAIM}, null);
 
-<span class="pc bpc" id="L68" title="2 of 4 branches missed.">            if (tokenIdMap == null || tokenIdMap.get(CASQUE_SNR_CLAIM) == null) {</span>
-<span class="nc" id="L69">                throw new CasqueException(&quot; User: &quot; + userName + &quot;, Token ID is null &quot;);</span>
+<span class="pc bpc" id="L71" title="2 of 4 branches missed.">            if (tokenIdMap == null || tokenIdMap.get(CASQUE_SNR_CLAIM) == null) {</span>
+<span class="nc" id="L72">                throw new CasqueException(&quot;Token ID is null for user:&quot; + userName);</span>
             }
-<span class="fc" id="L71">            String tokenId = tokenIdMap.get(CASQUE_SNR_CLAIM);</span>
-<span class="fc bfc" id="L72" title="All 2 branches covered.">            if (tokenId.matches(TOKEN_ID_FORMAT)) {</span>
-<span class="fc" id="L73">                return tokenId;</span>
+<span class="fc" id="L74">            String tokenId = tokenIdMap.get(CASQUE_SNR_CLAIM);</span>
+<span class="fc bfc" id="L75" title="All 2 branches covered.">            if (tokenId.matches(TOKEN_ID_FORMAT)) {</span>
+<span class="fc" id="L76">                return tokenId;</span>
             }
-<span class="fc" id="L75">            throw new CasqueException(&quot; User: &quot; + userName + &quot;, Token ID bad format: &quot; + tokenId);</span>
+<span class="fc" id="L78">            throw new CasqueException(tokenId + &quot;is a bad formatted Token ID for User&quot; + userName);</span>
 
-<span class="nc" id="L77">        } catch (org.wso2.carbon.user.api.UserStoreException e) {</span>
-<span class="nc" id="L78">            log.info(&quot; User Store Exception: &quot; + e.getMessage());</span>
+<span class="nc" id="L80">        } catch (org.wso2.carbon.user.api.UserStoreException e) {</span>
+<span class="nc" id="L81">            log.info(&quot;User Store Exception:&quot; + e.getMessage());</span>
         }
-<span class="nc" id="L80">        throw new CasqueException(&quot; Unable to get token id for user &quot; + userName);</span>
+<span class="nc" id="L83">        throw new CasqueException(&quot;Unable to get token id for user: &quot; + userName);</span>
     }
 
-    /*
-    Initiate the authentication request
-    */
+    /**
+     * Initiate the authentication request
+     * @param request,
+     * @param response,
+     * @param context,
+     * @return
+     * @throws AuthenticationFailedException
+     * @throws CasqueException
+     */
     private AuthenticatorFlowStatus start(HttpServletRequest request, HttpServletResponse response,
-                                          AuthenticationContext context) throws AuthenticationFailedException
-            , CasqueException {
+                                          AuthenticationContext context)
+            throws AuthenticationFailedException {
 
         try {
-<span class="fc" id="L91">            String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);</span>
+<span class="fc" id="L100">            String userName = request.getParameter(CasqueAuthenticatorConstants.USER_NAME);</span>
 
-<span class="pc bpc" id="L93" title="1 of 2 branches missed.">            if (StringUtils.isEmpty(userName)) {</span>
-<span class="nc" id="L94">                throw new CasqueException(&quot; userName is null &quot;);</span>
+<span class="pc bpc" id="L102" title="1 of 2 branches missed.">            if (StringUtils.isEmpty(userName)) {</span>
+<span class="nc" id="L103">                throw new CasqueException(&quot;userName is null&quot;);</span>
             }
 
-<span class="fc" id="L97">            context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);</span>
-<span class="fc" id="L98">            String tokenId = getCasqueTokenId(userName);</span>
-<span class="fc" id="L99">            String tokenIdPlusName = tokenId + userName;</span>
+<span class="fc" id="L106">            context.setProperty(CasqueAuthenticatorConstants.USER_NAME, userName);</span>
+<span class="fc" id="L107">            String tokenId = getCasqueTokenId(userName);</span>
+<span class="fc" id="L108">            String tokenIdPlusName = tokenId + userName;</span>
 
-<span class="fc" id="L101">            context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);</span>
+<span class="fc" id="L110">            context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);</span>
             // Initial Access Request, fixed user,  token ID + username as the password
             // Send request as Datagram packet
-<span class="fc" id="L104">            RadiusResponse radiusResponse = Radius.sendRequest(&quot;CASQUE SNR&quot;, tokenIdPlusName, null);</span>
-<span class="fc" id="L105">            int radiusResponseType = radiusResponse.getType();</span>
+<span class="fc" id="L113">            RadiusResponse radiusResponse = Radius.sendRequest(&quot;CASQUE SNR&quot;, tokenIdPlusName, null);</span>
+<span class="fc" id="L114">            int radiusResponseType = radiusResponse.getType();</span>
 
-<span class="pc bpc" id="L107" title="1 of 2 branches missed.">            if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Got a challenge</span>
-<span class="fc" id="L108">                context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());</span>
-<span class="fc" id="L109">                String challenge = radiusResponse.getChallenge();</span>
-<span class="fc" id="L110">                String contextIdentifier = context.getContextIdentifier();</span>
-<span class="fc" id="L111">                authPages.challengePage(response, contextIdentifier, challenge);</span>
-<span class="fc" id="L112">                return AuthenticatorFlowStatus.INCOMPLETE;</span>
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">            if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Got a challenge</span>
+<span class="fc" id="L117">                context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());</span>
+<span class="fc" id="L118">                String challenge = radiusResponse.getChallenge();</span>
+<span class="fc" id="L119">                String contextIdentifier = context.getContextIdentifier();</span>
+<span class="fc" id="L120">                authPages.challengePage(response, contextIdentifier, challenge);</span>
+<span class="fc" id="L121">                return AuthenticatorFlowStatus.INCOMPLETE;</span>
             }
 
-<span class="nc" id="L115">            clearProperties(context);</span>
+<span class="nc" id="L124">            clearProperties(context);</span>
 
-<span class="nc bnc" id="L117" title="All 2 branches missed.">            if (radiusResponseType == RadiusResponse.ACCESS_REJECT) {</span>
-<span class="nc" id="L118">                throw new InvalidCredentialsException(</span>
-<span class="nc" id="L119">                        &quot; User authentication failed due to invalid credentials &quot;, User.getUserFromUserName(userName));</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">            if (radiusResponseType == RadiusResponse.ACCESS_REJECT) {</span>
+<span class="nc" id="L127">                throw new InvalidCredentialsException(</span>
+<span class="nc" id="L128">                        &quot; User authentication failed due to invalid credentials &quot;, User.getUserFromUserName(userName));</span>
             }
 
-<span class="nc" id="L122">            throw new InvalidCredentialsException(&quot; User authentication failed due to &quot; + radiusResponse.getError(),</span>
-<span class="nc" id="L123">                    User.getUserFromUserName(userName));</span>
-<span class="nc" id="L124">        } catch (CasqueException ce) {</span>
-<span class="nc" id="L125">            throw new AuthenticationFailedException(ce.getMessage(), ce);</span>
+<span class="nc" id="L131">            throw new InvalidCredentialsException(&quot; User authentication failed due to &quot; + radiusResponse.getError(),</span>
+<span class="nc" id="L132">                    User.getUserFromUserName(userName));</span>
+<span class="nc" id="L133">        } catch (CasqueException ce) {</span>
+<span class="nc" id="L134">            throw new AuthenticationFailedException(ce.getMessage(), ce);</span>
         }
     }
 
     private void clearProperties(AuthenticationContext context) {
 
-<span class="fc" id="L131">        Map&lt;String, Object&gt; props = new HashMap&lt;&gt;();</span>
-<span class="fc" id="L132">        context.setProperties(props);</span>
-<span class="fc" id="L133">    }</span>
+<span class="fc" id="L140">        Map&lt;String, Object&gt; props = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L141">        context.setProperties(props);</span>
+<span class="fc" id="L142">    }</span>
 
     @Override
     public AuthenticatorFlowStatus process(HttpServletRequest request,
                                            HttpServletResponse response, AuthenticationContext context)
             throws AuthenticationFailedException, LogoutFailedException {
 
-<span class="fc bfc" id="L140" title="All 2 branches covered.">        if (context.isLogoutRequest()) {</span>
+<span class="fc bfc" id="L149" title="All 2 branches covered.">        if (context.isLogoutRequest()) {</span>
             try {
-<span class="nc" id="L142">                processLogoutResponse(request, response, context);</span>
-<span class="fc" id="L143">            } catch (UnsupportedOperationException e) {</span>
-<span class="pc bpc" id="L144" title="1 of 2 branches missed.">                if (log.isDebugEnabled()) {</span>
-<span class="fc" id="L145">                    log.debug(&quot; Ignoring UnsupportedOperationException.&quot;, e);</span>
+<span class="nc" id="L151">                processLogoutResponse(request, response, context);</span>
+<span class="fc" id="L152">            } catch (UnsupportedOperationException e) {</span>
+<span class="pc bpc" id="L153" title="1 of 2 branches missed.">                if (log.isDebugEnabled()) {</span>
+<span class="fc" id="L154">                    log.error(&quot;Ignoring UnsupportedOperationException&quot;, e);</span>
                 }
-<span class="nc" id="L147">            }</span>
-<span class="fc" id="L148">            return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
+<span class="nc" id="L156">            }</span>
+<span class="fc" id="L157">            return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
         }
 
-<span class="fc" id="L151">        byte[] radiusState = (byte[]) context.getProperty(CasqueAuthenticatorConstants.RADIUS_STATE);</span>
+<span class="fc" id="L160">        byte[] radiusState = (byte[]) context.getProperty(CasqueAuthenticatorConstants.RADIUS_STATE);</span>
 
-<span class="fc bfc" id="L153" title="All 2 branches covered.">        if (radiusState == null) { // Initial request, get a challenge</span>
-<span class="fc" id="L154">            AuthenticatorFlowStatus status = null;</span>
+<span class="fc bfc" id="L162" title="All 2 branches covered.">        if (radiusState == null) { // Initial request, get a challenge</span>
+<span class="fc" id="L163">            AuthenticatorFlowStatus status = null;</span>
             try {
-<span class="fc" id="L156">                status = start(request, response, context);</span>
-<span class="nc" id="L157">            } catch (CasqueException e) {</span>
-<span class="nc" id="L158">                e.printStackTrace();</span>
-<span class="fc" id="L159">            }</span>
-<span class="fc" id="L160">            context.setCurrentAuthenticator(getName());</span>
-<span class="fc" id="L161">            return status;</span>
+<span class="fc" id="L165">                status = start(request, response, context);</span>
+<span class="nc" id="L166">            } catch (AuthenticationFailedException e) {</span>
+
+<span class="nc" id="L168">                throw new AuthenticationFailedException(&quot;Error Accord while sending request  &quot;, e);</span>
+<span class="fc" id="L169">            }</span>
+<span class="fc" id="L170">            context.setCurrentAuthenticator(getName());</span>
+<span class="fc" id="L171">            return status;</span>
         }
         // radiusState is not null so handle the response to the challenge
-<span class="fc" id="L164">        context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);</span>
+<span class="fc" id="L174">        context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, null);</span>
 
-<span class="fc" id="L166">        String action = request.getParameter(CasqueAuthenticatorConstants.BTN_ACTION);</span>
-<span class="pc bpc" id="L167" title="1 of 4 branches missed.">        if (action != null &amp;&amp; &quot;Login&quot;.equals(action)) { // action can be null, Login or Cancel</span>
+<span class="fc" id="L176">        String action = request.getParameter(CasqueAuthenticatorConstants.BTN_ACTION);</span>
+<span class="pc bpc" id="L177" title="1 of 4 branches missed.">        if (action != null &amp;&amp; &quot;Login&quot;.equals(action)) { // action can be null, Login or Cancel</span>
 
-<span class="fc" id="L169">            String userName = (String) context.getProperty(CasqueAuthenticatorConstants.USER_NAME);</span>
-<span class="fc" id="L170">            String challengeResponse = request.getParameter(CasqueAuthenticatorConstants.RESPONSE);</span>
+<span class="fc" id="L179">            String userName = (String) context.getProperty(CasqueAuthenticatorConstants.USER_NAME);</span>
+<span class="fc" id="L180">            String challengeResponse = request.getParameter(CasqueAuthenticatorConstants.RESPONSE);</span>
             try {
                 // Send the response to the CASQUE Server
-<span class="fc" id="L173">                RadiusResponse radiusResponse = Radius.sendRequest(userName, challengeResponse, radiusState);</span>
-<span class="fc" id="L174">                int radiusResponseType = radiusResponse.getType();</span>
+<span class="fc" id="L183">                RadiusResponse radiusResponse = Radius.sendRequest(userName, challengeResponse, radiusState);</span>
+<span class="fc" id="L184">                int radiusResponseType = radiusResponse.getType();</span>
 
-<span class="fc bfc" id="L176" title="All 2 branches covered.">                if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Another challenge.</span>
-<span class="fc" id="L177">                    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());</span>
-<span class="fc" id="L178">                    String challenge = radiusResponse.getChallenge();</span>
-<span class="fc" id="L179">                    String contextIdentifier = context.getContextIdentifier();</span>
-<span class="fc" id="L180">                    authPages.challengePage(response, contextIdentifier, challenge);</span>
-<span class="fc" id="L181">                    return AuthenticatorFlowStatus.INCOMPLETE;</span>
+<span class="pc bpc" id="L186" title="1 of 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_CHALLENGE) { // Another challenge.</span>
+<span class="nc" id="L187">                    context.setProperty(CasqueAuthenticatorConstants.RADIUS_STATE, radiusResponse.getState());</span>
+<span class="nc" id="L188">                    String challenge = radiusResponse.getChallenge();</span>
+<span class="nc" id="L189">                    String contextIdentifier = context.getContextIdentifier();</span>
+<span class="nc" id="L190">                    authPages.challengePage(response, contextIdentifier, challenge);</span>
+<span class="nc" id="L191">                    return AuthenticatorFlowStatus.INCOMPLETE;</span>
                 }
 
-<span class="fc" id="L184">                clearProperties(context);</span>
+<span class="fc" id="L194">                clearProperties(context);</span>
 
-<span class="pc bpc" id="L186" title="1 of 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_ACCEPT) { // Authentication Pass.</span>
-<span class="fc" id="L187">                    context.setSubject(AuthenticatedUser.createLocalAuthenticatedUserFromSubjectIdentifier(userName));</span>
-<span class="fc" id="L188">                    String tokenId = getCasqueTokenId(userName);</span>
-<span class="fc" id="L189">                    log.debug(&quot; CASQUE Authentication PASS for &quot; + userName + &quot; with Token &quot; + tokenId);</span>
-<span class="fc" id="L190">                    request.setAttribute(FrameworkConstants.REQ_ATTR_HANDLED, true);</span>
-<span class="fc" id="L191">                    return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
+<span class="pc bpc" id="L196" title="1 of 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_ACCEPT) { // Authentication Pass.</span>
+<span class="fc" id="L197">                    context.setSubject(AuthenticatedUser.createLocalAuthenticatedUserFromSubjectIdentifier(userName));</span>
+<span class="fc" id="L198">                    String tokenId = getCasqueTokenId(userName);</span>
+<span class="fc" id="L199">                    log.debug(&quot;CASQUE Authentication PASS for &quot; + userName + &quot;with Token&quot; + tokenId);</span>
+<span class="fc" id="L200">                    request.setAttribute(FrameworkConstants.REQ_ATTR_HANDLED, true);</span>
+<span class="fc" id="L201">                    return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
                 }
 
-<span class="nc bnc" id="L194" title="All 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_REJECT) { // Authentication Failed.</span>
-<span class="nc" id="L195">                    throw new InvalidCredentialsException(&quot; User authentication failed due to invalid credentials &quot;,</span>
-<span class="nc" id="L196">                            User.getUserFromUserName(userName));</span>
+<span class="nc bnc" id="L204" title="All 2 branches missed.">                if (radiusResponseType == RadiusResponse.ACCESS_REJECT) { // Authentication Failed.</span>
+<span class="nc" id="L205">                    throw new InvalidCredentialsException(&quot;User authentication failed due to invalid credentials&quot;,</span>
+<span class="nc" id="L206">                            User.getUserFromUserName(userName));</span>
                 }
 
-<span class="nc" id="L199">                throw new InvalidCredentialsException(&quot; User authentication failed due to &quot; +</span>
-<span class="nc" id="L200">                        radiusResponse.getError(),</span>
-<span class="nc" id="L201">                        User.getUserFromUserName(userName));</span>
+<span class="nc" id="L209">                throw new InvalidCredentialsException(&quot;User authentication failed due to&quot; +</span>
+<span class="nc" id="L210">                        radiusResponse.getError(),</span>
+<span class="nc" id="L211">                        User.getUserFromUserName(userName));</span>
 
-<span class="nc" id="L203">            } catch (CasqueException ce) {</span>
-<span class="nc" id="L204">                throw new AuthenticationFailedException(ce.getMessage(), ce);</span>
+<span class="nc" id="L213">            } catch (CasqueException ce) {</span>
+<span class="nc" id="L214">                throw new AuthenticationFailedException(ce.getMessage(), ce);</span>
             }
         }
 
-        //log.info(&quot;Login Cancelled&quot;);
-<span class="fc" id="L209">        return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
+<span class="fc" id="L218">        return AuthenticatorFlowStatus.SUCCESS_COMPLETED;</span>
     }
 
     @Override
     protected void initiateAuthenticationRequest(HttpServletRequest request, HttpServletResponse response,
                                                  AuthenticationContext context) throws AuthenticationFailedException {
 
-<span class="nc" id="L216">    }</span>
+<span class="nc" id="L225">    }</span>
 
     @Override
     protected void processAuthenticationResponse(HttpServletRequest request,
@@ -221,36 +230,36 @@ import javax.servlet.http.HttpServletResponse;
                                                  AuthenticationContext context)
             throws AuthenticationFailedException {
 
-<span class="nc" id="L224">    }</span>
+<span class="nc" id="L233">    }</span>
 
     @Override
     public boolean canHandle(HttpServletRequest req) {
 
-<span class="fc" id="L229">        return true;</span>
+<span class="fc" id="L238">        return true;</span>
     }
 
     @Override
     protected boolean retryAuthenticationEnabled() {
 
-<span class="fc" id="L235">        return false;</span>
+<span class="fc" id="L244">        return false;</span>
     }
 
     @Override
     public String getContextIdentifier(HttpServletRequest req) {
 
-<span class="nc" id="L241">        return req.getParameter(&quot; sessionDataKey &quot;);</span>
+<span class="nc" id="L250">        return req.getParameter(&quot;sessionDataKey&quot;);</span>
     }
 
     @Override
     public String getFriendlyName() {
 
-<span class="fc" id="L247">        return CasqueAuthenticatorConstants.AUTHENTICATOR_FRIENDLY_NAME;</span>
+<span class="fc" id="L256">        return CasqueAuthenticatorConstants.AUTHENTICATOR_FRIENDLY_NAME;</span>
     }
 
     @Override
     public String getName() {
 
-<span class="fc" id="L253">        return CasqueAuthenticatorConstants.AUTHENTICATOR_NAME;</span>
+<span class="fc" id="L262">        return CasqueAuthenticatorConstants.AUTHENTICATOR_NAME;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>

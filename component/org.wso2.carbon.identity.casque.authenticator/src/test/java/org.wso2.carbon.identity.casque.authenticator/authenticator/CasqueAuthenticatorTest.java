@@ -209,26 +209,7 @@ public class CasqueAuthenticatorTest {
         Assert.assertEquals(status, AuthenticatorFlowStatus.SUCCESS_COMPLETED);
     }
 
-    @Test(description = "Test case for process() method for Another challenge.")
-    public void testProcessRadiusState() throws Exception {
 
-        byte[] radiusState = new byte[1];
-        radiusState[0] = 10;
-        int radiusResponseType = 11;
-
-        mockStatic(Radius.class);
-
-        when(context.isLogoutRequest()).thenReturn(false);
-        when(context.getProperty(anyString())).thenReturn(radiusState);
-        when(httpServletRequest.getParameter(anyString())).thenReturn("Login");
-        when(context.getProperty(CasqueAuthenticatorConstants.USER_NAME)).thenReturn("casque1");
-        when(httpServletRequest.getParameter(CasqueAuthenticatorConstants.RESPONSE)).thenReturn("ACCESS_CHALLENGE ");
-        when(Radius.sendRequest(anyString(), anyString(), (byte[]) anyObject())).thenReturn(radiusResponse);
-        when(radiusResponse.getType()).thenReturn(radiusResponseType);
-        AuthenticatorFlowStatus status = casqueAuthenticator.process(httpServletRequest, httpServletResponse, context);
-        Assert.assertEquals(status, AuthenticatorFlowStatus.INCOMPLETE);
-
-    }
 
     @Test(description = "Test case for process() method for ForRadiusStateNull()")
     public void testProcessRadiusState5() throws Exception {
